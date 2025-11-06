@@ -35,7 +35,7 @@ const About = () => {
               <span className="gradient-text">Technical Excellence</span> Meets Marketing Strategy
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              As a Site Reliability Engineer at Guhatek, I combine deep technical expertise with strategic marketing insights to help tech companies scale both their infrastructure and their client base.
+              As a Site Reliability Engineer, I combine deep technical expertise with strategic marketing insights to help tech companies scale both their infrastructure and their client base.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ const About = () => {
           <div className="bg-gradient-card rounded-3xl p-8 md:p-12 mb-12 shadow-card border border-border">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-foreground leading-relaxed mb-6">
-                With over 5 years of experience in Cloud DevOps and Site Reliability Engineering, I specialize in building and maintaining highly available, scalable systems that power modern tech businesses. Currently serving as an SRE at <span className="font-semibold text-primary">Guhatek</span>, I ensure production systems maintain 99.9% uptime while optimizing for performance and cost.
+                With over 5 years of experience in Cloud DevOps and Site Reliability Engineering, I specialize in building and maintaining highly available, scalable systems that power modern tech businesses. I ensure production systems maintain 99.9% uptime while optimizing for performance and cost.
               </p>
               <p className="text-lg text-foreground leading-relaxed">
                 Beyond infrastructure, I've developed a unique expertise in <span className="font-semibold text-primary">Meta Ads Management</span> specifically for tech companies. I understand the technical language that resonates with CTOs, DevOps teams, and engineering leaders — helping cloud, DevOps, SRE, and ML companies attract qualified leads through precisely targeted Facebook and Instagram campaigns.
