@@ -1,5 +1,6 @@
 import { Award, Shield, Cloud, Server } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import jamesProfessional from "@/assets/james-professional.jpg";
 
 const About = () => {
   const certifications = [
@@ -39,15 +40,29 @@ const About = () => {
             </p>
           </div>
 
-          {/* Bio section */}
+          {/* Bio section with photo */}
           <div className="bg-gradient-card rounded-3xl p-8 md:p-12 mb-12 shadow-card border border-border">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-foreground leading-relaxed mb-6">
-                With over 5 years of experience in Cloud DevOps and Site Reliability Engineering, I specialize in building and maintaining highly available, scalable systems that power modern tech businesses. I ensure production systems maintain 99.9% uptime while optimizing for performance and cost.
-              </p>
-              <p className="text-lg text-foreground leading-relaxed">
-                Beyond infrastructure, I've developed a unique expertise in <span className="font-semibold text-primary">Meta Ads Management</span> specifically for tech companies. I understand the technical language that resonates with CTOs, DevOps teams, and engineering leaders — helping cloud, DevOps, SRE, and ML companies attract qualified leads through precisely targeted Facebook and Instagram campaigns.
-              </p>
+            <div className="grid md:grid-cols-[300px,1fr] gap-8 items-center">
+              {/* Profile Image */}
+              <div className="mx-auto md:mx-0">
+                <div className="relative w-64 h-64 md:w-full md:h-[300px] rounded-2xl overflow-hidden shadow-elevated border-4 border-primary/20">
+                  <img 
+                    src={jamesProfessional} 
+                    alt="James Edozie Nnadi - Cloud DevOps and Site Reliability Engineer"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              {/* Bio Text */}
+              <div className="prose prose-lg max-w-none">
+                <p className="text-lg text-foreground leading-relaxed mb-6">
+                  With over 5 years of experience in Cloud DevOps and Site Reliability Engineering, I specialize in building and maintaining highly available, scalable systems that power modern tech businesses. I ensure production systems maintain 99.9% uptime while optimizing for performance and cost.
+                </p>
+                <p className="text-lg text-foreground leading-relaxed">
+                  Beyond infrastructure, I've developed a unique expertise in <span className="font-semibold text-primary">Meta Ads Management</span> specifically for tech companies. I understand the technical language that resonates with CTOs, DevOps teams, and engineering leaders — helping cloud, DevOps, SRE, and ML companies attract qualified leads through precisely targeted Facebook and Instagram campaigns.
+                </p>
+              </div>
             </div>
           </div>
 
