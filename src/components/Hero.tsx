@@ -59,13 +59,13 @@ const Hero = () => {
 
             {/* Right: Profile Image */}
             <div className="flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+              <div className="relative w-80 h-[480px] lg:w-96 lg:h-[576px]">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-2xl"></div>
                 <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white/20 shadow-elevated">
                   <img 
                     src={jamesHero} 
                     alt="James Edozie Nnadi - DevOps Engineer"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
               </div>
