@@ -4,7 +4,7 @@ import jamesHero from "@/assets/james-hero.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pt-20">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
@@ -59,13 +59,13 @@ const Hero = () => {
 
             {/* Right: Profile Image */}
             <div className="flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="relative w-80 h-[480px] lg:w-96 lg:h-[576px]">
+              <div className="relative w-80 h-[400px] lg:w-[420px] lg:h-[520px]">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-2xl"></div>
-                <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white/20 shadow-elevated">
+                <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white/20 shadow-elevated bg-muted/10">
                   <img 
                     src={jamesHero} 
                     alt="James Edozie Nnadi - DevOps Engineer"
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
