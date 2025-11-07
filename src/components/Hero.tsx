@@ -59,7 +59,7 @@ const Hero = () => {
 
             {/* Right: Profile Image */}
             <div className="flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="relative w-80 h-[400px] lg:w-[420px] lg:h-[520px]">
+              <div className="relative w-64 h-80 lg:w-80 lg:h-96">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-3xl blur-2xl"></div>
                 <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white/20 shadow-elevated bg-muted/10">
                   <img 
