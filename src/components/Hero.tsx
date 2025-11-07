@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cloud, TrendingUp, Target } from "lucide-react";
+import { ArrowRight, Cloud, TrendingUp, Target, Shield, Box, Hexagon, Database, Instagram } from "lucide-react";
 import jamesHero from "@/assets/james-hero.jpg";
 
 const Hero = () => {
@@ -16,7 +16,7 @@ const Hero = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: Content */}
             <div className="text-center lg:text-left">
-              {/* Dual Badges */}
+              {/* Triple Badges */}
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
                 <div className="inline-flex items-center gap-2 bg-accent/90 backdrop-blur-sm border border-accent/40 rounded-full px-4 py-2 animate-fade-in">
                   <Target className="h-4 w-4 text-white" />
@@ -24,7 +24,11 @@ const Hero = () => {
                 </div>
                 <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 animate-fade-in" style={{ animationDelay: '0.1s' }}>
                   <Cloud className="h-4 w-4 text-white" />
-                  <span className="text-sm text-white font-medium">DevOps Engineer</span>
+                  <span className="text-sm text-white font-medium">DevOps Cloud Engineer</span>
+                </div>
+                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                  <Shield className="h-4 w-4 text-white" />
+                  <span className="text-sm text-white font-medium">Site Reliability Engineer</span>
                 </div>
               </div>
 
@@ -78,8 +82,94 @@ const Hero = () => {
             </div>
           </div>
 
+          {/* Animated Tech Stack */}
+          <div className="mt-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="relative overflow-hidden py-8">
+              <div className="flex animate-scroll">
+                {/* First set */}
+                <div className="flex items-center gap-12 px-6 whitespace-nowrap">
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Cloud className="h-8 w-8" />
+                    <span className="text-sm font-medium">AWS</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Cloud className="h-8 w-8" />
+                    <span className="text-sm font-medium">Azure</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Box className="h-8 w-8" />
+                    <span className="text-sm font-medium">Terraform</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Hexagon className="h-8 w-8" />
+                    <span className="text-sm font-medium">Kubernetes</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Database className="h-8 w-8" />
+                    <span className="text-sm font-medium">Linux</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Target className="h-8 w-8" />
+                    <span className="text-sm font-medium">Meta</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Instagram className="h-8 w-8" />
+                    <span className="text-sm font-medium">Instagram</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Box className="h-8 w-8" />
+                    <span className="text-sm font-medium">Docker</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Cloud className="h-8 w-8" />
+                    <span className="text-sm font-medium">Datadog</span>
+                  </div>
+                </div>
+                {/* Duplicate set for seamless loop */}
+                <div className="flex items-center gap-12 px-6 whitespace-nowrap">
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Cloud className="h-8 w-8" />
+                    <span className="text-sm font-medium">AWS</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Cloud className="h-8 w-8" />
+                    <span className="text-sm font-medium">Azure</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Box className="h-8 w-8" />
+                    <span className="text-sm font-medium">Terraform</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Hexagon className="h-8 w-8" />
+                    <span className="text-sm font-medium">Kubernetes</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Database className="h-8 w-8" />
+                    <span className="text-sm font-medium">Linux</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Target className="h-8 w-8" />
+                    <span className="text-sm font-medium">Meta</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Instagram className="h-8 w-8" />
+                    <span className="text-sm font-medium">Instagram</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Box className="h-8 w-8" />
+                    <span className="text-sm font-medium">Docker</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-white/70">
+                    <Cloud className="h-8 w-8" />
+                    <span className="text-sm font-medium">Datadog</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 animate-fade-in" style={{ animationDelay: '0.5s' }}>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
               <div className="text-4xl font-bold text-accent mb-2">$1M+</div>
               <div className="text-white/80">Meta Ad Spend Managed</div>
