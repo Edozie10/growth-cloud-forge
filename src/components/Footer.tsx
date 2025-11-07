@@ -55,7 +55,7 @@ const Footer = () => {
                   <Mail className="h-5 w-5" />
                 </a>
                 <a 
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/edozie-james-44594716a/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"

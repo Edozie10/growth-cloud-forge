@@ -141,7 +141,7 @@ const Contact = () => {
                     <span>james@example.com</span>
                   </a>
                   <a 
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/edozie-james-44594716a/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
