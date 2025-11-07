@@ -81,7 +81,7 @@ const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-              <div className="text-4xl font-bold text-accent mb-2">$2M+</div>
+              <div className="text-4xl font-bold text-accent mb-2">$1M+</div>
               <div className="text-white/80">Meta Ad Spend Managed</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
