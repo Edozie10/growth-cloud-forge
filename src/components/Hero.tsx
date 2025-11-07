@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cloud, TrendingUp } from "lucide-react";
+import { ArrowRight, Cloud, TrendingUp, Target } from "lucide-react";
 import jamesHero from "@/assets/james-hero.jpg";
 
 const Hero = () => {
@@ -16,10 +16,16 @@ const Hero = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left: Content */}
             <div className="text-center lg:text-left">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8 animate-fade-in">
-                <Cloud className="h-4 w-4 text-white" />
-                <span className="text-sm text-white font-medium">Site Reliability Engineer</span>
+              {/* Dual Badges */}
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
+                <div className="inline-flex items-center gap-2 bg-accent/90 backdrop-blur-sm border border-accent/40 rounded-full px-4 py-2 animate-fade-in">
+                  <Target className="h-4 w-4 text-white" />
+                  <span className="text-sm text-white font-medium">Meta Ads Strategist</span>
+                </div>
+                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                  <Cloud className="h-4 w-4 text-white" />
+                  <span className="text-sm text-white font-medium">DevOps Engineer</span>
+                </div>
               </div>
 
               {/* Main heading */}
@@ -27,12 +33,12 @@ const Hero = () => {
                 James Edozie Nnadi
               </h1>
               
-              <p className="text-xl md:text-2xl text-white/90 mb-4 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                Cloud DevOps & Site Reliability Engineer
+              <p className="text-xl md:text-2xl text-white/90 mb-4 animate-slide-up font-semibold" style={{ animationDelay: '0.1s' }}>
+                Meta Ads Strategist & Cloud Infrastructure Expert
               </p>
 
               <p className="text-lg md:text-xl text-white/80 mb-12 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                Helping Tech Companies Scale Their Infrastructure and Clients — with Precision, Automation, and Meta Ads Strategy
+                I help tech companies scale profitably through <span className="text-accent font-semibold">high-ROI Meta advertising campaigns</span> and rock-solid cloud infrastructure that supports rapid growth
               </p>
 
               {/* CTA Buttons */}
@@ -42,7 +48,7 @@ const Hero = () => {
                   variant="secondary"
                   className="group text-lg px-8 py-6 shadow-elevated hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
-                  Let's Grow Your Tech Brand
+                  Scale with Meta Ads
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 
@@ -52,7 +58,7 @@ const Hero = () => {
                   className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:border-white/40 shadow-card transition-all duration-300"
                 >
                   <TrendingUp className="mr-2 h-5 w-5" />
-                  View Services
+                  View My Strategy
                 </Button>
               </div>
             </div>
@@ -75,16 +81,16 @@ const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-              <div className="text-4xl font-bold text-white mb-2">5+</div>
-              <div className="text-white/80">Years Experience</div>
+              <div className="text-4xl font-bold text-accent mb-2">$2M+</div>
+              <div className="text-white/80">Meta Ad Spend Managed</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-              <div className="text-4xl font-bold text-white mb-2">4</div>
-              <div className="text-white/80">Professional Certifications</div>
+              <div className="text-4xl font-bold text-accent mb-2">5X</div>
+              <div className="text-white/80">Average ROAS Achieved</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-              <div className="text-4xl font-bold text-white mb-2">100%</div>
-              <div className="text-white/80">Client Satisfaction</div>
+              <div className="text-4xl font-bold text-accent mb-2">50+</div>
+              <div className="text-white/80">Successful Campaigns</div>
             </div>
           </div>
         </div>
