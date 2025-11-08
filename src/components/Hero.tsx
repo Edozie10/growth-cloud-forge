@@ -1,6 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cloud, TrendingUp, Target, Shield, Box, Hexagon, Database, Instagram } from "lucide-react";
+import { ArrowRight, TrendingUp, Target, Shield, Cloud } from "lucide-react";
 import jamesHero from "@/assets/james-hero.jpg";
+import awsLogo from "@/assets/logos/aws.svg";
+import azureLogo from "@/assets/logos/azure.svg";
+import terraformLogo from "@/assets/logos/terraform.svg";
+import kubernetesLogo from "@/assets/logos/kubernetes.svg";
+import linuxLogo from "@/assets/logos/linux.svg";
+import metaLogo from "@/assets/logos/meta.svg";
+import instagramLogo from "@/assets/logos/instagram.svg";
+import dockerLogo from "@/assets/logos/docker.svg";
+import datadogLogo from "@/assets/logos/datadog.svg";
 
 const Hero = () => {
   return (
@@ -88,79 +97,79 @@ const Hero = () => {
               <div className="flex animate-scroll">
                 {/* First set */}
                 <div className="flex items-center gap-12 px-6 whitespace-nowrap">
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Cloud className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={awsLogo} alt="AWS" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">AWS</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Cloud className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={azureLogo} alt="Azure" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Azure</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Box className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={terraformLogo} alt="Terraform" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Terraform</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Hexagon className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={kubernetesLogo} alt="Kubernetes" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Kubernetes</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Database className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={linuxLogo} alt="Linux" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Linux</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Target className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={metaLogo} alt="Meta" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Meta</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Instagram className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={instagramLogo} alt="Instagram" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Instagram</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Box className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={dockerLogo} alt="Docker" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Docker</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Cloud className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={datadogLogo} alt="Datadog" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Datadog</span>
                   </div>
                 </div>
                 {/* Duplicate set for seamless loop */}
                 <div className="flex items-center gap-12 px-6 whitespace-nowrap">
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Cloud className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={awsLogo} alt="AWS" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">AWS</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Cloud className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={azureLogo} alt="Azure" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Azure</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Box className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={terraformLogo} alt="Terraform" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Terraform</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Hexagon className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={kubernetesLogo} alt="Kubernetes" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Kubernetes</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Database className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={linuxLogo} alt="Linux" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Linux</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Target className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={metaLogo} alt="Meta" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Meta</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Instagram className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={instagramLogo} alt="Instagram" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Instagram</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Box className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={dockerLogo} alt="Docker" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Docker</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white/70">
-                    <Cloud className="h-8 w-8" />
+                  <div className="flex items-center gap-3 text-white/70 hover:text-white/90 transition-colors">
+                    <img src={datadogLogo} alt="Datadog" className="h-8 w-8 object-contain" />
                     <span className="text-sm font-medium">Datadog</span>
                   </div>
                 </div>
