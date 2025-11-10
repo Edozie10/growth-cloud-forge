@@ -42,7 +42,7 @@ const Hero = () => {
               </div>
 
               {/* Main heading */}
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-slide-up">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up whitespace-nowrap">
                 James Edozie Nnadi
               </h1>
               
