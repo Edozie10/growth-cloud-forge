@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Mail, Linkedin, Github, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -14,8 +15,9 @@ const Contact = () => {
     company: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -28,14 +30,34 @@ const Contact = () => {
       return;
     }
 
-    // Success message
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({ name: "", email: "", company: "", message: "" });
+    try {
+      // Call the edge function to send emails
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) throw error;
+
+      // Success message
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or email me directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -119,9 +141,10 @@ const Contact = () => {
                   type="submit"
                   size="lg"
                   className="w-full group shadow-elevated hover:shadow-xl transition-all duration-300"
+                  disabled={isSubmitting}
                 >
                   <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  Book a Consultation
+                  {isSubmitting ? "Sending..." : "Book a Consultation"}
                 </Button>
               </form>
             </Card>
@@ -132,13 +155,13 @@ const Contact = () => {
                 <h3 className="font-semibold text-lg mb-4 text-card-foreground">Connect With Me</h3>
                 <div className="space-y-4">
                   <a 
-                    href="mailto:james@example.com"
+                    href="mailto:edozie@jenmeta.cloud"
                     className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
                   >
                     <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
                       <Mail className="h-5 w-5 text-primary" />
                     </div>
-                    <span>james@example.com</span>
+                    <span>edozie@jenmeta.cloud</span>
                   </a>
                   <a 
                     href="https://www.linkedin.com/in/edozie-james-44594716a/"

@@ -48,7 +48,7 @@ const Footer = () => {
               <h4 className="font-semibold mb-4">Connect</h4>
               <div className="flex gap-4">
                 <a 
-                  href="mailto:james@example.com"
+                  href="mailto:edozie@jenmeta.cloud"
                   className="p-3 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
                   aria-label="Email"
                 >
