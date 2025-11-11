@@ -60,6 +60,9 @@ const Hero = () => {
                   size="lg"
                   variant="secondary"
                   className="group text-lg px-8 py-6 shadow-elevated hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  onClick={() => {
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
                   Scale with Meta Ads
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -69,6 +72,9 @@ const Hero = () => {
                   size="lg"
                   variant="outline"
                   className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:border-white/40 shadow-card transition-all duration-300"
+                  onClick={() => {
+                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
                   <TrendingUp className="mr-2 h-5 w-5" />
                   View My Strategy
