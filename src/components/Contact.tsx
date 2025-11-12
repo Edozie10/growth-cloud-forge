@@ -5,7 +5,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Mail, Linkedin, Github, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -31,69 +30,32 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  
-  // Basic validation
-  if (!formData.name || !formData.email || !formData.message) {
-    toast({
-      title: "Missing Information",
-      description: "Please fill in all required fields.",
-      variant: "destructive"
-    });
-    return;
-  }
 
-  setIsSubmitting(true);
-
-  try {
-    const response = await fetch("/.netlify/functions/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-
-    const result = await response.json();
-
-    if (result.success) {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      setFormData({ name: "", email: "", company: "", message: "" });
-    } else {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again or email me directly.",
-        variant: "destructive"
-      });
-    }
-  } catch (error: any) {
-    console.error("Error sending message:", error);
-    toast({
-      title: "Error",
-      description: "Failed to send message. Please try again or email me directly.",
-      variant: "destructive"
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-
-  
-
-      if (error) throw error;
-
-      // Success message
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+    try {
+      const response = await fetch("/.netlify/functions/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
-      // Reset form
-      setFormData({ name: "", email: "", company: "", message: "" });
-    } catch (error: any) {
-      console.error("Error sending message:", error);
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", company: "", message: "" });
+      } else {
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again or email me directly.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      const err = error as any;
+      console.error("Error sending message:", err);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again or email me directly.",
@@ -108,7 +70,6 @@ const handleSubmit = async (e: React.FormEvent) => {
     <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
-          {/* Section header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Let's <span className="gradient-text">Work Together</span>
@@ -119,7 +80,6 @@ const handleSubmit = async (e: React.FormEvent) => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Contact form */}
             <Card className="lg:col-span-2 p-8 shadow-card border-border">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -193,7 +153,6 @@ const handleSubmit = async (e: React.FormEvent) => {
               </form>
             </Card>
 
-            {/* Contact info */}
             <div className="space-y-6">
               <Card className="p-6 shadow-card border-border hover:shadow-elevated transition-shadow">
                 <h3 className="font-semibold text-lg mb-4 text-card-foreground">Connect With Me</h3>
