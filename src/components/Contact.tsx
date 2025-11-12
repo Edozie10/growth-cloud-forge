@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Mail, Linkedin, Github, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -32,27 +33,17 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/.netlify/functions/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
       });
 
-      const result = await response.json();
+      if (error) throw error;
 
-      if (result.success) {
-        toast({
-          title: "Message Sent!",
-          description: "Thank you for reaching out. I'll get back to you soon.",
-        });
-        setFormData({ name: "", email: "", company: "", message: "" });
-      } else {
-        toast({
-          title: "Error",
-          description: "Something went wrong. Please try again or email me directly.",
-          variant: "destructive"
-        });
-      }
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", company: "", message: "" });
     } catch (error) {
       const err = error as any;
       console.error("Error sending message:", err);
