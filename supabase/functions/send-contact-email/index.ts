@@ -54,8 +54,8 @@ const handler = async (req: Request): Promise<Response> => {
       html: `
         <h1>Thank you for contacting me, ${name}!</h1>
         <p>I have received your consultation request and will get back to you as soon as possible.</p>
-        <p>In the meantime, feel free to connect with me on LinkedIn or check out my work on GitHub.</p>
-        <p>Best regards,<br>James Edozie Nnadi<br>Cloud DevOps & Site Reliability Engineer</p>
+        <p>In the meantime, feel free to <a href="https://www.linkedin.com/in/edozie-james-44594716a/" style="color: #0077B5; text-decoration: underline;">connect with me on LinkedIn</a>.</p>
+        <p>Best regards,<br>James Edozie Nnadi<br>Meta Ads Strategist | Cloud DevOps & Site Reliability Engineer</p>
       `,
     });
 
