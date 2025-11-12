@@ -31,12 +31,56 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
+  // Basic validation
+  if (!formData.name || !formData.email || !formData.message) {
+    toast({
+      title: "Missing Information",
+      description: "Please fill in all required fields.",
+      variant: "destructive"
+    });
+    return;
+  }
 
-    try {
-      // Call the edge function to send emails
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch("/.netlify/functions/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
       });
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } else {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again or email me directly.",
+        variant: "destructive"
+      });
+    }
+  } catch (error: any) {
+    console.error("Error sending message:", error);
+    toast({
+      title: "Error",
+      description: "Failed to send message. Please try again or email me directly.",
+      variant: "destructive"
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+  
 
       if (error) throw error;
 
