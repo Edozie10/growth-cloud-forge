@@ -3,7 +3,7 @@ name: Deploy to S3
 on:
   push:
     branches:
-      - main  # deploys on every push to the main branch
+      - main  # deploys on every push to main branch
 
 jobs:
   deploy:
@@ -21,4 +21,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: "./"  # Adjust if your site files are in a subfolder like "dist/"
+          SOURCE_DIR: "./public"   # <- This ensures index.html is deployed to bucket root
