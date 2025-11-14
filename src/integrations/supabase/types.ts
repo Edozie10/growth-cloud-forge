@@ -14,7 +14,84 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      applications: {
+        Row: {
+          additional_info: string | null
+          applicant_current_location: string | null
+          applicant_current_organization: string | null
+          applicant_current_role: string | null
+          certifications: string | null
+          contact_number: string
+          created_at: string
+          current_ctc: string | null
+          currently_in_notice: string | null
+          email: string
+          expected_ctc: string | null
+          full_name: string
+          id: string
+          immediate_joiner: string | null
+          interested_position: string
+          linkedin_profile: string | null
+          location_preference: string | null
+          notice_period: string | null
+          offered_ctc: string | null
+          other_offers_in_hand: string | null
+          referred_by: string | null
+          resume_path: string | null
+          total_experience: string
+        }
+        Insert: {
+          additional_info?: string | null
+          applicant_current_location?: string | null
+          applicant_current_organization?: string | null
+          applicant_current_role?: string | null
+          certifications?: string | null
+          contact_number: string
+          created_at?: string
+          current_ctc?: string | null
+          currently_in_notice?: string | null
+          email: string
+          expected_ctc?: string | null
+          full_name: string
+          id?: string
+          immediate_joiner?: string | null
+          interested_position: string
+          linkedin_profile?: string | null
+          location_preference?: string | null
+          notice_period?: string | null
+          offered_ctc?: string | null
+          other_offers_in_hand?: string | null
+          referred_by?: string | null
+          resume_path?: string | null
+          total_experience: string
+        }
+        Update: {
+          additional_info?: string | null
+          applicant_current_location?: string | null
+          applicant_current_organization?: string | null
+          applicant_current_role?: string | null
+          certifications?: string | null
+          contact_number?: string
+          created_at?: string
+          current_ctc?: string | null
+          currently_in_notice?: string | null
+          email?: string
+          expected_ctc?: string | null
+          full_name?: string
+          id?: string
+          immediate_joiner?: string | null
+          interested_position?: string
+          linkedin_profile?: string | null
+          location_preference?: string | null
+          notice_period?: string | null
+          offered_ctc?: string | null
+          other_offers_in_hand?: string | null
+          referred_by?: string | null
+          resume_path?: string | null
+          total_experience?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
