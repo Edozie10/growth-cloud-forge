@@ -4,6 +4,9 @@ import { Resend } from "https://esm.sh/resend@4.0.0";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
+// Google Sheets API configuration
+const GOOGLE_SHEETS_API = "https://sheets.googleapis.com/v4/spreadsheets";
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
@@ -70,39 +73,81 @@ const handler = async (req: Request): Promise<Response> => {
       resumePath = filePath;
     }
 
-    // Insert application into database
-    const { data: insertedApp, error: insertError } = await supabase
-      .from("applications")
-      .insert({
-        full_name: applicationData.fullName,
-        email: applicationData.email,
-        contact_number: applicationData.contactNumber,
-        linkedin_profile: applicationData.linkedinProfile,
-        resume_path: resumePath,
-        interested_position: applicationData.interestedPosition,
-        applicant_current_role: applicationData.currentRole,
-        applicant_current_organization: applicationData.currentOrganization,
-        total_experience: applicationData.totalExperience,
-        applicant_current_location: applicationData.currentLocation,
-        location_preference: applicationData.locationPreference,
-        current_ctc: applicationData.currentCTC,
-        expected_ctc: applicationData.expectedCTC,
-        notice_period: applicationData.noticePeriod,
-        currently_in_notice: applicationData.currentlyInNotice,
-        immediate_joiner: applicationData.immediateJoiner,
-        other_offers_in_hand: applicationData.otherOffersInHand,
-        offered_ctc: applicationData.offeredCTC,
-        certifications: applicationData.certifications,
-        referred_by: applicationData.referredBy,
-        additional_info: applicationData.additionalInfo,
-      })
-      .select()
-      .single();
+    // Prepare data for Google Sheets
+    const sheetData = [
+      new Date().toISOString(),
+      applicationData.fullName,
+      applicationData.email,
+      applicationData.contactNumber,
+      applicationData.linkedinProfile || "",
+      applicationData.interestedPosition,
+      applicationData.totalExperience,
+      applicationData.currentRole || "",
+      applicationData.currentOrganization || "",
+      applicationData.certifications || "",
+      applicationData.currentLocation || "",
+      applicationData.locationPreference || "",
+      applicationData.currentCTC || "",
+      applicationData.expectedCTC || "",
+      applicationData.offeredCTC || "",
+      applicationData.otherOffersInHand || "",
+      applicationData.immediateJoiner || "",
+      applicationData.noticePeriod || "",
+      applicationData.currentlyInNotice || "",
+      applicationData.referredBy || "",
+      applicationData.additionalInfo || "",
+      resumePath || "No resume uploaded",
+    ];
 
-    if (insertError) {
-      console.error("Database insert error:", insertError);
-      throw new Error("Failed to save application");
+    // Write to Google Sheets
+    const serviceAccount = JSON.parse(Deno.env.get("GOOGLE_SERVICE_ACCOUNT_JSON")!);
+    const sheetId = Deno.env.get("GOOGLE_SHEET_ID");
+
+    console.log("Getting Google Sheets access token...");
+    
+    // Get access token
+    const jwt = await createJWT(serviceAccount);
+    const tokenResponse = await fetch("https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+        assertion: jwt,
+      }),
+    });
+
+    if (!tokenResponse.ok) {
+      const error = await tokenResponse.text();
+      console.error("Token error:", error);
+      throw new Error(`Failed to get access token: ${error}`);
     }
+
+    const { access_token } = await tokenResponse.json();
+    console.log("Access token obtained successfully");
+
+    // Append row to sheet
+    console.log("Writing to Google Sheets...");
+    const appendResponse = await fetch(
+      `${GOOGLE_SHEETS_API}/${sheetId}/values/Sheet1!A:V:append?valueInputOption=RAW`,
+      {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${access_token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          values: [sheetData],
+        }),
+      }
+    );
+
+    if (!appendResponse.ok) {
+      const error = await appendResponse.text();
+      console.error("Google Sheets error:", error);
+      throw new Error(`Failed to write to Google Sheets: ${error}`);
+    }
+
+    console.log("Data written to Google Sheets successfully");
 
     // Send notification email to admin
     await resend.emails.send({
@@ -177,5 +222,151 @@ const handler = async (req: Request): Promise<Response> => {
     );
   }
 };
+
+// Helper function to create JWT for Google Sheets API
+async function createJWT(serviceAccount: any): Promise<string> {
+  const header = {
+    alg: "RS256",
+    typ: "JWT",
+  };
+
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    iss: serviceAccount.client_email,
+    scope: "https://www.googleapis.com/auth/spreadsheets",
+    aud: "https://oauth2.googleapis.com/token",
+    exp: now + 3600,
+    iat: now,
+  };
+
+  const encodedHeader = base64UrlEncode(JSON.stringify(header));
+  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
+  const signatureInput = `${encodedHeader}.${encodedPayload}`;
+
+  // Import private key
+  const privateKey = await crypto.subtle.importKey(
+    "pkcs8",
+    pemToArrayBuffer(serviceAccount.private_key),
+    {
+      name: "RSASSA-PKCS1-v1_5",
+      hash: "SHA-256",
+    },
+    false,
+    ["sign"]
+  );
+
+  // Sign
+  const signature = await crypto.subtle.sign(
+    "RSASSA-PKCS1-v1_5",
+    privateKey,
+    new TextEncoder().encode(signatureInput)
+  );
+
+  const encodedSignature = base64UrlEncode(signature);
+  return `${signatureInput}.${encodedSignature}`;
+}
+
+function base64UrlEncode(data: string | ArrayBuffer): string {
+  const bytes = typeof data === "string" 
+    ? new TextEncoder().encode(data)
+    : new Uint8Array(data);
+  
+  let binary = "";
+  bytes.forEach(byte => binary += String.fromCharCode(byte));
+  
+  return btoa(binary)
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
+}
+
+function pemToArrayBuffer(pem: string): ArrayBuffer {
+  const pemContents = pem
+    .replace("-----BEGIN PRIVATE KEY-----", "")
+    .replace("-----END PRIVATE KEY-----", "")
+    .replace(/\s/g, "");
+  
+  const binaryString = atob(pemContents);
+  const bytes = new Uint8Array(binaryString.length);
+  
+  for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+  
+  return bytes.buffer;
+}
+
+// Helper function to create JWT for Google Sheets API
+async function createJWT(serviceAccount: any): Promise<string> {
+  const header = {
+    alg: "RS256",
+    typ: "JWT",
+  };
+
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    iss: serviceAccount.client_email,
+    scope: "https://www.googleapis.com/auth/spreadsheets",
+    aud: "https://oauth2.googleapis.com/token",
+    exp: now + 3600,
+    iat: now,
+  };
+
+  const encodedHeader = base64UrlEncode(JSON.stringify(header));
+  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
+  const signatureInput = `${encodedHeader}.${encodedPayload}`;
+
+  // Import private key
+  const privateKey = await crypto.subtle.importKey(
+    "pkcs8",
+    pemToArrayBuffer(serviceAccount.private_key),
+    {
+      name: "RSASSA-PKCS1-v1_5",
+      hash: "SHA-256",
+    },
+    false,
+    ["sign"]
+  );
+
+  // Sign
+  const signature = await crypto.subtle.sign(
+    "RSASSA-PKCS1-v1_5",
+    privateKey,
+    new TextEncoder().encode(signatureInput)
+  );
+
+  const encodedSignature = base64UrlEncode(signature);
+  return `${signatureInput}.${encodedSignature}`;
+}
+
+function base64UrlEncode(data: string | ArrayBuffer): string {
+  const bytes = typeof data === "string" 
+    ? new TextEncoder().encode(data)
+    : new Uint8Array(data);
+  
+  let binary = "";
+  bytes.forEach(byte => binary += String.fromCharCode(byte));
+  
+  return btoa(binary)
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
+}
+
+function pemToArrayBuffer(pem: string): ArrayBuffer {
+  const pemContents = pem
+    .replace("-----BEGIN PRIVATE KEY-----", "")
+    .replace("-----END PRIVATE KEY-----", "")
+    .replace(/\s/g, "");
+  
+  const binaryString = atob(pemContents);
+  const bytes = new Uint8Array(binaryString.length);
+  
+  for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+  
+  return bytes.buffer;
+}
 
 serve(handler);
