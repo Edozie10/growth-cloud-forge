@@ -35,6 +35,77 @@ interface ApplicationData {
   additionalInfo: string;
 }
 
+// Helper function to create JWT for Google Sheets API
+async function createJWT(serviceAccount: any): Promise<string> {
+  const header = {
+    alg: "RS256",
+    typ: "JWT",
+  };
+
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    iss: serviceAccount.client_email,
+    scope: "https://www.googleapis.com/auth/spreadsheets",
+    aud: "https://oauth2.googleapis.com/token",
+    exp: now + 3600,
+    iat: now,
+  };
+
+  const encodedHeader = base64UrlEncode(JSON.stringify(header));
+  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
+  const signatureInput = `${encodedHeader}.${encodedPayload}`;
+
+  const privateKey = await crypto.subtle.importKey(
+    "pkcs8",
+    pemToArrayBuffer(serviceAccount.private_key),
+    {
+      name: "RSASSA-PKCS1-v1_5",
+      hash: "SHA-256",
+    },
+    false,
+    ["sign"]
+  );
+
+  const signature = await crypto.subtle.sign(
+    "RSASSA-PKCS1-v1_5",
+    privateKey,
+    new TextEncoder().encode(signatureInput)
+  );
+
+  const encodedSignature = base64UrlEncode(signature);
+  return `${signatureInput}.${encodedSignature}`;
+}
+
+function base64UrlEncode(data: string | ArrayBuffer): string {
+  const bytes = typeof data === "string" 
+    ? new TextEncoder().encode(data)
+    : new Uint8Array(data);
+  
+  let binary = "";
+  bytes.forEach(byte => binary += String.fromCharCode(byte));
+  
+  return btoa(binary)
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
+}
+
+function pemToArrayBuffer(pem: string): ArrayBuffer {
+  const pemContents = pem
+    .replace("-----BEGIN PRIVATE KEY-----", "")
+    .replace("-----END PRIVATE KEY-----", "")
+    .replace(/\s/g, "");
+  
+  const binaryString = atob(pemContents);
+  const bytes = new Uint8Array(binaryString.length);
+  
+  for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+  
+  return bytes.buffer;
+}
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -105,7 +176,6 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Getting Google Sheets access token...");
     
-    // Get access token
     const jwt = await createJWT(serviceAccount);
     const tokenResponse = await fetch("https://oauth2.googleapis.com/token", {
       method: "POST",
@@ -125,7 +195,6 @@ const handler = async (req: Request): Promise<Response> => {
     const { access_token } = await tokenResponse.json();
     console.log("Access token obtained successfully");
 
-    // Append row to sheet
     console.log("Writing to Google Sheets...");
     const appendResponse = await fetch(
       `${GOOGLE_SHEETS_API}/${sheetId}/values/Sheet1!A:V:append?valueInputOption=RAW`,
@@ -205,7 +274,7 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     return new Response(
-      JSON.stringify({ success: true, applicationId: insertedApp.id }),
+      JSON.stringify({ success: true }),
       {
         status: 200,
         headers: { "Content-Type": "application/json", ...corsHeaders },
@@ -222,151 +291,5 @@ const handler = async (req: Request): Promise<Response> => {
     );
   }
 };
-
-// Helper function to create JWT for Google Sheets API
-async function createJWT(serviceAccount: any): Promise<string> {
-  const header = {
-    alg: "RS256",
-    typ: "JWT",
-  };
-
-  const now = Math.floor(Date.now() / 1000);
-  const payload = {
-    iss: serviceAccount.client_email,
-    scope: "https://www.googleapis.com/auth/spreadsheets",
-    aud: "https://oauth2.googleapis.com/token",
-    exp: now + 3600,
-    iat: now,
-  };
-
-  const encodedHeader = base64UrlEncode(JSON.stringify(header));
-  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
-  const signatureInput = `${encodedHeader}.${encodedPayload}`;
-
-  // Import private key
-  const privateKey = await crypto.subtle.importKey(
-    "pkcs8",
-    pemToArrayBuffer(serviceAccount.private_key),
-    {
-      name: "RSASSA-PKCS1-v1_5",
-      hash: "SHA-256",
-    },
-    false,
-    ["sign"]
-  );
-
-  // Sign
-  const signature = await crypto.subtle.sign(
-    "RSASSA-PKCS1-v1_5",
-    privateKey,
-    new TextEncoder().encode(signatureInput)
-  );
-
-  const encodedSignature = base64UrlEncode(signature);
-  return `${signatureInput}.${encodedSignature}`;
-}
-
-function base64UrlEncode(data: string | ArrayBuffer): string {
-  const bytes = typeof data === "string" 
-    ? new TextEncoder().encode(data)
-    : new Uint8Array(data);
-  
-  let binary = "";
-  bytes.forEach(byte => binary += String.fromCharCode(byte));
-  
-  return btoa(binary)
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_")
-    .replace(/=+$/, "");
-}
-
-function pemToArrayBuffer(pem: string): ArrayBuffer {
-  const pemContents = pem
-    .replace("-----BEGIN PRIVATE KEY-----", "")
-    .replace("-----END PRIVATE KEY-----", "")
-    .replace(/\s/g, "");
-  
-  const binaryString = atob(pemContents);
-  const bytes = new Uint8Array(binaryString.length);
-  
-  for (let i = 0; i < binaryString.length; i++) {
-    bytes[i] = binaryString.charCodeAt(i);
-  }
-  
-  return bytes.buffer;
-}
-
-// Helper function to create JWT for Google Sheets API
-async function createJWT(serviceAccount: any): Promise<string> {
-  const header = {
-    alg: "RS256",
-    typ: "JWT",
-  };
-
-  const now = Math.floor(Date.now() / 1000);
-  const payload = {
-    iss: serviceAccount.client_email,
-    scope: "https://www.googleapis.com/auth/spreadsheets",
-    aud: "https://oauth2.googleapis.com/token",
-    exp: now + 3600,
-    iat: now,
-  };
-
-  const encodedHeader = base64UrlEncode(JSON.stringify(header));
-  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
-  const signatureInput = `${encodedHeader}.${encodedPayload}`;
-
-  // Import private key
-  const privateKey = await crypto.subtle.importKey(
-    "pkcs8",
-    pemToArrayBuffer(serviceAccount.private_key),
-    {
-      name: "RSASSA-PKCS1-v1_5",
-      hash: "SHA-256",
-    },
-    false,
-    ["sign"]
-  );
-
-  // Sign
-  const signature = await crypto.subtle.sign(
-    "RSASSA-PKCS1-v1_5",
-    privateKey,
-    new TextEncoder().encode(signatureInput)
-  );
-
-  const encodedSignature = base64UrlEncode(signature);
-  return `${signatureInput}.${encodedSignature}`;
-}
-
-function base64UrlEncode(data: string | ArrayBuffer): string {
-  const bytes = typeof data === "string" 
-    ? new TextEncoder().encode(data)
-    : new Uint8Array(data);
-  
-  let binary = "";
-  bytes.forEach(byte => binary += String.fromCharCode(byte));
-  
-  return btoa(binary)
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_")
-    .replace(/=+$/, "");
-}
-
-function pemToArrayBuffer(pem: string): ArrayBuffer {
-  const pemContents = pem
-    .replace("-----BEGIN PRIVATE KEY-----", "")
-    .replace("-----END PRIVATE KEY-----", "")
-    .replace(/\s/g, "");
-  
-  const binaryString = atob(pemContents);
-  const bytes = new Uint8Array(binaryString.length);
-  
-  for (let i = 0; i < binaryString.length; i++) {
-    bytes[i] = binaryString.charCodeAt(i);
-  }
-  
-  return bytes.buffer;
-}
 
 serve(handler);
