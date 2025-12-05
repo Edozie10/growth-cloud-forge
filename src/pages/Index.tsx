@@ -1,22 +1,30 @@
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
-import SREServices from "@/components/SREServices";
-import Results from "@/components/Results";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import Navigation from "@/components/linux/Navigation";
+import Hero from "@/components/linux/Hero";
+import WhyLinux from "@/components/linux/WhyLinux";
+import AboutTraining from "@/components/linux/AboutTraining";
+import CoreSkills from "@/components/linux/CoreSkills";
+import Curriculum from "@/components/linux/Curriculum";
+import WhatYouGet from "@/components/linux/WhatYouGet";
+import Testimonials from "@/components/linux/Testimonials";
+import Pricing from "@/components/linux/Pricing";
+import FAQ from "@/components/linux/FAQ";
+import FinalCTA from "@/components/linux/FinalCTA";
+import Footer from "@/components/linux/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
-      <About />
-      <Services />
-      <SREServices />
-      <Results />
-      <Contact />
+      <WhyLinux />
+      <AboutTraining />
+      <CoreSkills />
+      <Curriculum />
+      <WhatYouGet />
+      <Testimonials />
+      <Pricing />
+      <FAQ />
+      <FinalCTA />
       <Footer />
     </div>
   );
