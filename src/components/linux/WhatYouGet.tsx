@@ -1,10 +1,13 @@
-import { CheckCircle2, Users, BookOpen, Award, Briefcase } from "lucide-react";
+import { CheckCircle2, Users, BookOpen, Award, Briefcase, MessageCircle } from "lucide-react";
+
+const WHATSAPP_URL = "https://wa.me/15165477865";
 
 const benefits = [
   {
     icon: Users,
     title: "Lifetime Community Access",
-    description: "Join our private WhatsApp community of Linux professionals for ongoing support, networking, and opportunities."
+    description: "Join our private WhatsApp community of Linux professionals for ongoing support, networking, and opportunities.",
+    hasWhatsApp: true
   },
   {
     icon: BookOpen,
@@ -63,7 +66,7 @@ const WhatYouGet = () => {
                 "12 comprehensive training modules",
                 "100+ hours of hands-on practice",
                 "10+ real-world projects",
-                "Private WhatsApp Group access",
+                { text: "Private WhatsApp Group access", isWhatsApp: true },
                 "Career Mentorship Call",
                 "Official RedHat RHCSA Exam Certification Prep",
                 "Career coaching & interview prep",
@@ -72,7 +75,19 @@ const WhatYouGet = () => {
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                  <span className="text-foreground">{item}</span>
+                  {typeof item === 'string' ? (
+                    <span className="text-foreground">{item}</span>
+                  ) : (
+                    <a 
+                      href={WHATSAPP_URL} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-foreground hover:text-primary transition-colors flex items-center gap-2"
+                    >
+                      {item.text}
+                      <MessageCircle className="w-4 h-4 text-primary" />
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
