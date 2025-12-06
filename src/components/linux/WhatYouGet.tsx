@@ -1,15 +1,10 @@
-import { CheckCircle2, Users, Video, BookOpen, Award, Briefcase } from "lucide-react";
+import { CheckCircle2, Users, BookOpen, Award, Briefcase } from "lucide-react";
 
 const benefits = [
   {
     icon: Users,
     title: "Lifetime Community Access",
-    description: "Join our private community of Linux professionals for ongoing support, networking, and opportunities."
-  },
-  {
-    icon: Video,
-    title: "Weekly Mentorship Sessions",
-    description: "Live sessions with experienced Linux admins to answer questions and provide guidance."
+    description: "Join our private WhatsApp community of Linux professionals for ongoing support, networking, and opportunities."
   },
   {
     icon: BookOpen,
@@ -20,6 +15,11 @@ const benefits = [
     icon: Award,
     title: "Certificate of Completion",
     description: "Industry-recognized certificate to showcase your new Linux administration skills."
+  },
+  {
+    icon: Award,
+    title: "Official RedHat RHCSA Exam Certification Prep",
+    description: "Comprehensive preparation for the Red Hat Certified System Administrator (RHCSA) exam."
   },
   {
     icon: Briefcase,
@@ -63,9 +63,9 @@ const WhatYouGet = () => {
                 "12 comprehensive training modules",
                 "100+ hours of hands-on practice",
                 "10+ real-world projects",
-                "Private Discord community access",
-                "Weekly live Q&A sessions",
-                "1-on-1 mentorship calls",
+                "Private WhatsApp Group access",
+                "Career Mentorship Call",
+                "Official RedHat RHCSA Exam Certification Prep",
                 "Career coaching & interview prep",
                 "Certificate of completion",
                 "Lifetime access to course materials"

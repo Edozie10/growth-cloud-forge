@@ -3,35 +3,35 @@ import { Card } from "@/components/ui/card";
 
 const testimonials = [
   {
-    name: "Adebayo Ogunlade",
+    name: "Marcus Johnson",
     role: "Junior DevOps Engineer",
     company: "Tech Startup",
     content: "This training completely changed my career trajectory. I went from knowing nothing about Linux to landing my first DevOps role within 2 months of completing the course.",
     rating: 5
   },
   {
-    name: "Chioma Nwankwo",
+    name: "Sarah Williams",
     role: "System Administrator",
     company: "Fintech Company",
     content: "The hands-on projects were invaluable. The instructors really care about your success and the community support is amazing. Best investment I've made in my career.",
     rating: 5
   },
   {
-    name: "Emmanuel Okafor",
+    name: "DeShawn Carter",
     role: "Cloud Engineer",
     company: "Consulting Firm",
     content: "As someone who was completely new to tech, this program gave me the confidence and skills I needed. The mentorship sessions helped me navigate challenges effectively.",
     rating: 5
   },
   {
-    name: "Fatima Abdullahi",
+    name: "Emily Thompson",
     role: "IT Support Specialist",
     company: "Healthcare",
     content: "The curriculum is well-structured and practical. I especially loved the automation and containerization modules. Now I use these skills daily at work.",
     rating: 5
   },
   {
-    name: "David Mensah",
+    name: "Jamal Washington",
     role: "Linux Administrator",
     company: "E-commerce Platform",
     content: "The career coaching was a game-changer. From resume optimization to interview prep, they prepared me for every aspect of the job search. Highly recommended!",

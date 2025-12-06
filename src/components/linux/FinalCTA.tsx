@@ -1,13 +1,9 @@
 import { ArrowRight, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const ENROLLMENT_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd2z3AIqHRgwpwNlii8U_eQpkdhPoD9l467jnFvOC_xEf6CMw/viewform?usp=header";
+
 const FinalCTA = () => {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section className="py-24 relative overflow-hidden">
@@ -49,10 +45,12 @@ const FinalCTA = () => {
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-12 py-8 text-xl shadow-glow hover:shadow-elevated transition-all animate-pulse-glow"
-            onClick={() => scrollToSection("#pricing")}
+            asChild
           >
-            Start Your Linux SysAdmin Journey Today
-            <ArrowRight className="ml-3 w-6 h-6" />
+            <a href={ENROLLMENT_URL} target="_blank" rel="noopener noreferrer">
+              Start Your Linux SysAdmin Journey Today
+              <ArrowRight className="ml-3 w-6 h-6" />
+            </a>
           </Button>
 
           <p className="text-sm text-muted-foreground mt-6">
