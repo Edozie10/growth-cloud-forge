@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Menu, X, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const ENROLLMENT_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd2z3AIqHRgwpwNlii8U_eQpkdhPoD9l467jnFvOC_xEf6CMw/viewform?usp=header";
+
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -67,10 +69,12 @@ const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button
-              onClick={() => scrollToSection("#pricing")}
               className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold"
+              asChild
             >
-              Enroll Now
+              <a href={ENROLLMENT_URL} target="_blank" rel="noopener noreferrer">
+                Enroll Now
+              </a>
             </Button>
           </div>
 
@@ -102,10 +106,12 @@ const Navigation = () => {
               </button>
             ))}
             <Button
-              onClick={() => scrollToSection("#pricing")}
               className="w-full bg-primary hover:bg-primary-glow text-primary-foreground font-semibold"
+              asChild
             >
-              Enroll Now
+              <a href={ENROLLMENT_URL} target="_blank" rel="noopener noreferrer">
+                Enroll Now
+              </a>
             </Button>
           </div>
         </div>
