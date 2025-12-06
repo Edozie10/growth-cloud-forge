@@ -1,6 +1,8 @@
 import { Terminal, Download, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const ENROLLMENT_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd2z3AIqHRgwpwNlii8U_eQpkdhPoD9l467jnFvOC_xEf6CMw/viewform?usp=header";
+
 const Hero = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -72,10 +74,12 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-8 py-6 text-lg shadow-glow hover:shadow-elevated transition-all"
-              onClick={() => scrollToSection("#pricing")}
+              asChild
             >
-              Enroll Now
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <a href={ENROLLMENT_URL} target="_blank" rel="noopener noreferrer">
+                Enroll Now
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
             </Button>
             <Button 
               size="lg" 

@@ -6,7 +6,6 @@ import CoreSkills from "@/components/linux/CoreSkills";
 import Curriculum from "@/components/linux/Curriculum";
 import WhatYouGet from "@/components/linux/WhatYouGet";
 import Testimonials from "@/components/linux/Testimonials";
-import Pricing from "@/components/linux/Pricing";
 import FAQ from "@/components/linux/FAQ";
 import FinalCTA from "@/components/linux/FinalCTA";
 import Footer from "@/components/linux/Footer";
@@ -22,7 +21,6 @@ const Index = () => {
       <Curriculum />
       <WhatYouGet />
       <Testimonials />
-      <Pricing />
       <FAQ />
       <FinalCTA />
       <Footer />
