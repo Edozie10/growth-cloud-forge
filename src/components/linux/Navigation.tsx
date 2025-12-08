@@ -49,7 +49,7 @@ const Navigation = () => {
               <Terminal className="w-5 h-5 text-primary" />
             </div>
             <span className="font-bold text-lg font-sans">
-              Linux<span className="text-primary">Admin</span>
+              Complx<span className="text-primary">Simple</span>
             </span>
           </div>
 
