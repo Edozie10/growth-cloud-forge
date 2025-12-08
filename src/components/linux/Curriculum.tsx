@@ -53,7 +53,7 @@ const modules = [
   },
   {
     title: "Module 12: RHCSA Certification Prep",
-    topics: ["RHCSA exam objectives overview", "Essential system administration tasks", "Managing storage & file systems for RHCSA", "User & group management deep dive", "Practice exams & exam-taking strategies"]
+    topics: ["RHCSA exam objectives overview", "Practice exams & exam-taking strategies"]
   },
   {
     title: "Module 13: Career & Interview Prep",
