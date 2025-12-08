@@ -52,7 +52,11 @@ const modules = [
     topics: ["Web server deployment", "Database server setup", "Backup automation", "Monitoring stack implementation"]
   },
   {
-    title: "Module 12: Career & Interview Prep",
+    title: "Module 12: RHCSA Certification Prep",
+    topics: ["RHCSA exam objectives overview", "Essential system administration tasks", "Managing storage & file systems for RHCSA", "User & group management deep dive", "Practice exams & exam-taking strategies"]
+  },
+  {
+    title: "Module 13: Career & Interview Prep",
     topics: ["Resume optimization", "Technical interview prep", "Hands-on interview scenarios", "Job search strategies", "Networking tips"]
   }
 ];
