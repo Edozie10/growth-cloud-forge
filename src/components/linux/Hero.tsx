@@ -30,7 +30,7 @@ const Hero = () => {
           {/* Terminal Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 mb-8 animate-fade-in">
             <Terminal className="w-4 h-4 text-primary" />
-            <span className="text-sm font-mono text-primary">12-Week Intensive Program</span>
+            <span className="text-sm font-mono text-primary">16-Week Intensive Program</span>
           </div>
 
           {/* Main Heading */}
@@ -39,7 +39,7 @@ const Hero = () => {
             <br />
             Linux System Administrator
             <br />
-            <span className="text-primary">in 3 Months</span>
+            <span className="text-primary">in 4 Months</span>
           </h1>
 
           {/* Subtitle */}
@@ -64,7 +64,7 @@ const Hero = () => {
                 Installing: fundamentals, networking, security, automation...
               </p>
               <p className="text-muted-foreground mt-1">
-                <span className="text-primary">✓</span> Career ready in 12 weeks
+                <span className="text-primary">✓</span> Career ready in 16 weeks
               </p>
             </div>
           </div>
@@ -103,7 +103,7 @@ const Hero = () => {
               <p className="text-sm text-muted-foreground">Placement Rate</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-primary">12</p>
+              <p className="text-3xl md:text-4xl font-bold text-primary">16</p>
               <p className="text-sm text-muted-foreground">Weeks Duration</p>
             </div>
           </div>

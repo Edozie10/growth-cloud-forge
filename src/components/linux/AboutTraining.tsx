@@ -18,7 +18,7 @@ const AboutTraining = () => {
           <div>
             <span className="text-primary font-mono text-sm mb-4 block">// ABOUT_TRAINING</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 font-sans">
-              A Fully Practical <span className="text-primary">12-Week</span> Linux Training
+              A Fully Practical <span className="text-primary">16-Week</span> Linux Training
             </h2>
             <p className="text-muted-foreground text-lg mb-6">
               Designed to take complete beginners from zero to job-ready Linux System Administrators. 
@@ -56,7 +56,7 @@ const AboutTraining = () => {
               <p><span className="text-primary">#!/bin/bash</span></p>
               <p className="text-muted-foreground"># Your Linux Journey</p>
               <p></p>
-              <p><span className="text-yellow-500">WEEKS</span>=<span className="text-primary">"12"</span></p>
+              <p><span className="text-yellow-500">WEEKS</span>=<span className="text-primary">"16"</span></p>
               <p><span className="text-yellow-500">HOURS_PER_WEEK</span>=<span className="text-primary">"15-20"</span></p>
               <p><span className="text-yellow-500">PROJECTS</span>=<span className="text-primary">"10+"</span></p>
               <p><span className="text-yellow-500">SUPPORT</span>=<span className="text-primary">"Lifetime"</span></p>
