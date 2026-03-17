@@ -52,7 +52,7 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
 
-  base: "/growth-cloud-forge/",
+  base: "/",
 
   server: {
     host: "::",
