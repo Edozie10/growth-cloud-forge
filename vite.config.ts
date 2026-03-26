@@ -79,7 +79,7 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
 
-  base: "./",  // ✅ FIXED
+  base: "/",  // ✅ FIXED
 
   server: {
     host: "::",
