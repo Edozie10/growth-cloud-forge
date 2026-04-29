@@ -8,36 +8,36 @@ import { HelpCircle } from "lucide-react";
 
 const faqs = [
   {
-    question: "Do I need prior programming or IT experience?",
-    answer: "No! This course is designed for complete beginners. We start from the very basics and progressively build your skills. All you need is a computer, internet connection, and the willingness to learn."
+    question: "Which version of Red Hat Enterprise Linux does the course use?",
+    answer: "We train exclusively on Red Hat Enterprise Linux 10.1 using Red Hat's official RH199 RHCSA Rapid Track curriculum. All labs, exercises, and tooling reflect the latest RHEL 10 features."
   },
   {
-    question: "Is this course beginner friendly?",
-    answer: "Absolutely! Our curriculum is structured to take you from zero to job-ready. We explain every concept clearly, provide hands-on practice, and offer support whenever you get stuck."
+    question: "Does this course prepare me for the RHCSA EX200 exam?",
+    answer: "Yes. The curriculum is mapped chapter-by-chapter to the RHCSA EX200 objectives for RHEL 10, including a full comprehensive review and timed practice labs in the final chapter."
+  },
+  {
+    question: "Do I need prior Linux or programming experience?",
+    answer: "No prior experience is required. We start from the command line basics and build progressively to advanced topics like LVM, SELinux, systemd, and boot recovery."
   },
   {
     question: "What do I need to start?",
-    answer: "You'll need a computer (Windows, Mac, or Linux) with at least 8GB RAM, a stable internet connection, and 15-20 hours per week to dedicate to learning. We'll guide you through setting up your practice environment."
+    answer: "A computer (Windows, Mac, or Linux) with at least 8GB RAM, a stable internet connection, and 15–20 hours per week. We'll help you set up RHEL 10.1 in a virtual machine for hands-on practice."
   },
   {
     question: "Can I get a job after completing this course?",
-    answer: "Yes! Our training is specifically designed to make you job-ready. With a 95% placement rate, most of our students secure positions within 2-3 months of completion. We also provide career coaching and interview preparation."
+    answer: "Yes. RHCSA on RHEL 10 is one of the most in-demand Linux certifications. Graduates qualify for roles such as Linux System Administrator, DevOps Engineer, Cloud Engineer, and SRE."
   },
   {
     question: "What if I fall behind or can't keep up?",
-    answer: "Don't worry! You get lifetime access to all course materials, so you can learn at your own pace. Our mentors and community are always available to help you catch up and overcome any challenges."
+    answer: "You get lifetime access to all course materials and labs, so you can learn at your own pace. Our mentors and community are always available to help."
   },
   {
     question: "Is there a certificate upon completion?",
-    answer: "Yes! Upon successfully completing the course and projects, you'll receive a certificate of completion that you can add to your resume and LinkedIn profile."
-  },
-  {
-    question: "What kind of jobs can I apply for after this course?",
-    answer: "You can apply for roles like Junior Linux Administrator, System Administrator, DevOps Engineer, Cloud Support Engineer, IT Support Specialist, and more. The skills you learn are highly transferable."
+    answer: "Yes. You'll receive a ComplxSimple completion certificate, plus full preparation to sit Red Hat's official RHCSA (EX200) exam on RHEL 10."
   },
   {
     question: "Do you offer payment plans?",
-    answer: "Yes, we offer flexible payment options including installment plans. Contact us to discuss a payment schedule that works for you."
+    answer: "Yes, we offer flexible installment plans. Reach out via WhatsApp to discuss a schedule that works for you."
   }
 ];
 

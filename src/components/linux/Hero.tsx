@@ -30,22 +30,23 @@ const Hero = () => {
           {/* Terminal Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 mb-8 animate-fade-in">
             <Terminal className="w-4 h-4 text-primary" />
-            <span className="text-sm font-mono text-primary">16-Week Intensive Program</span>
+            <span className="text-sm font-mono text-primary">RHEL 10.1 • RHCSA Rapid Track • 16 Weeks</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in font-sans">
-            Become a <span className="gradient-text">Job-Ready</span>
+            Become a <span className="gradient-text">Red Hat Certified</span>
             <br />
             Linux System Administrator
             <br />
-            <span className="text-primary">in 4 Months</span>
+            <span className="text-primary">on RHEL 10.1 in 4 Months</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in max-w-2xl mx-auto" style={{ animationDelay: "0.1s" }}>
-            Hands-on training, real-world projects, mentorship & lifetime community access.
-            <span className="text-primary font-semibold"> Transform your career with Linux.</span>
+            Official RH199 RHCSA Rapid Track curriculum on Red Hat Enterprise Linux 10 — hands-on labs,
+            real servers, and full EX200 exam prep.
+            <span className="text-primary font-semibold"> Get job-ready and certified.</span>
           </p>
 
           {/* Terminal Preview */}
