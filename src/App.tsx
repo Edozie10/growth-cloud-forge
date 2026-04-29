@@ -42,8 +42,7 @@ const App = () => (
       <Toaster />
       <Sonner />
 
-      {/* IMPORTANT: GitHub Pages Fix */}
-      <BrowserRouter basename="/growth-cloud-forge">
+      <BrowserRouter>
 
         <Routes>
 
