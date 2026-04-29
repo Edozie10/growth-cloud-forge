@@ -18,16 +18,16 @@ const AboutTraining = () => {
           <div>
             <span className="text-primary font-mono text-sm mb-4 block">// ABOUT_TRAINING</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 font-sans">
-              A Fully Practical <span className="text-primary">16-Week</span> Linux Training
+              A Fully Practical <span className="text-primary">16-Week</span> RHEL 10.1 Training
             </h2>
             <p className="text-muted-foreground text-lg mb-6">
-              Designed to take complete beginners from zero to job-ready Linux System Administrators. 
-              No prior experience required—just your dedication and willingness to learn.
+              Built on Red Hat's official RH199 RHCSA Rapid Track curriculum for Red Hat Enterprise Linux 10.
+              Designed to take beginners and IT pros from zero to RHCSA-certified — no prior Linux experience required.
             </p>
             <p className="text-muted-foreground mb-8">
-              Our curriculum covers everything from basic commands to advanced server management, 
-              cloud fundamentals, containerization, and automation. You'll work on real-world projects 
-              that mirror actual production environments.
+              You'll work directly on RHEL 10.1 systems covering users & permissions, storage & LVM,
+              SELinux, firewalld, systemd, networking with nmcli, NFS, boot recovery, and the full
+              EX200 exam objectives — through guided exercises and end-of-chapter labs.
             </p>
 
             {/* Feature Pills */}

@@ -1,37 +1,43 @@
-import { Terminal, Users, Settings, Shield, Container, Cog } from "lucide-react";
+import { Terminal, Users, HardDrive, Shield, Network, Cog } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const skills = [
   {
     icon: Terminal,
-    title: "Linux Fundamentals & Command Line Mastery",
-    description: "Master the terminal, file systems, navigation, and essential commands that form the backbone of Linux administration."
+    title: "RHEL 10 Command Line & File Management",
+    description:
+      "Master the bash shell, file operations, links, shell expansions, and the vim editor on Red Hat Enterprise Linux 10.",
   },
   {
     icon: Users,
-    title: "User, Permission & System Security Management",
-    description: "Learn to manage users, groups, permissions, and implement robust security policies for enterprise environments."
+    title: "Users, Groups & File Permissions",
+    description:
+      "Manage local users and groups, sudo privileges, password policies, ACLs, and special permissions (SUID/SGID/sticky).",
   },
   {
-    icon: Settings,
-    title: "System Administration Tasks",
-    description: "Handle services, processes, storage management, system monitoring, and performance optimization like a pro."
+    icon: HardDrive,
+    title: "Storage, LVM & File Systems",
+    description:
+      "Partition disks, build XFS/ext4 file systems, manage swap, and provision logical volumes with LVM on RHEL 10.",
   },
   {
     icon: Shield,
-    title: "Networking, Firewalls & Server Hardening",
-    description: "Configure networks, firewalls, SELinux, and implement security best practices to protect your infrastructure."
+    title: "SELinux, Firewalld & Server Hardening",
+    description:
+      "Operate SELinux contexts and booleans, label ports with semanage, and control firewalld zones to harden RHEL servers.",
   },
   {
-    icon: Container,
-    title: "Containers (Docker) & DevOps Tools",
-    description: "Get hands-on with Docker containers, orchestration concepts, and essential DevOps tooling for modern infrastructure."
+    icon: Network,
+    title: "Networking, NFS & Time Sync",
+    description:
+      "Configure networking with nmcli, name resolution, NFS mounts, autofs, and chrony time synchronization.",
   },
   {
     icon: Cog,
-    title: "Automation with Ansible & Shell Scripting",
-    description: "Automate repetitive tasks with Bash scripting and Ansible, becoming more efficient and valuable as an admin."
-  }
+    title: "Systemd, DNF, Flatpak & Boot Recovery",
+    description:
+      "Control services with systemctl, schedule timers, install software via DNF & Flatpak, and recover GRUB2 and root access.",
+  },
 ];
 
 const CoreSkills = () => {
@@ -41,24 +47,23 @@ const CoreSkills = () => {
         <div className="text-center mb-16">
           <span className="text-primary font-mono text-sm mb-4 block">// CORE_SKILLS</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans">
-            Skills You Will <span className="text-primary">Master</span>
+            Skills You Will <span className="text-primary">Master on RHEL 10</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Our comprehensive curriculum covers the 6 core competencies every Linux System Administrator needs.
+            Six core competency areas mapped directly to the Red Hat RHCSA EX200 exam objectives for RHEL 10.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
-            <Card 
+            <Card
               key={index}
               className="bg-card border-border p-6 hover:border-primary/50 transition-all duration-300 group relative overflow-hidden"
             >
-              {/* Skill Number */}
               <span className="absolute top-4 right-4 text-6xl font-bold text-primary/5 font-mono">
-                {String(index + 1).padStart(2, '0')}
+                {String(index + 1).padStart(2, "0")}
               </span>
-              
+
               <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors relative z-10">
                 <skill.icon className="w-7 h-7 text-primary" />
               </div>
