@@ -34,9 +34,9 @@ const skills = [
   },
   {
     icon: Cog,
-    title: "Systemd, DNF, Flatpak & Boot Recovery",
+    title: "Systemd, DNF & Boot Recovery",
     description:
-      "Control services with systemctl, schedule timers, install software via DNF & Flatpak, and recover GRUB2 and root access.",
+      "Control services with systemctl, schedule timers, install and update software via DNF, and recover GRUB2 and root access.",
   },
 ];
 
