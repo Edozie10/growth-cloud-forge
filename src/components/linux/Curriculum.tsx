@@ -57,6 +57,14 @@ const modules = [
     ],
   },
   {
+    title: "Chapter 7: Installing and Updating Applications with Flatpak",
+    topics: [
+      "Configure Flatpak for application installation",
+      "Manage applications from Flatpak remotes",
+      "Update and remove Flatpak apps",
+    ],
+  },
+  {
     title: "Chapter 8: Accessing Removable Media",
     topics: [
       "Identify file systems and block devices",
