@@ -49,7 +49,7 @@ const modules = [
     ],
   },
   {
-    title: "Chapter 6: Installing and Updating Software with RPM",
+    title: "Chapter 6: Installing and Updating Software with RPM & DNF",
     topics: [
       "Investigate RPM software packages",
       "Install and update packages with DNF",
@@ -65,7 +65,7 @@ const modules = [
     ],
   },
   {
-    title: "Chapter 8: Accessing Removable Media",
+    title: "Chapter 8: Accessing Removable Media & Local Storage",
     topics: [
       "Identify file systems and block devices",
       "Mount and unmount file systems",
@@ -82,7 +82,7 @@ const modules = [
     ],
   },
   {
-    title: "Chapter 10: Controlling Services and Daemons",
+    title: "Chapter 10: Controlling Services and Daemons (systemd)",
     topics: [
       "Identify system processes that start automatically",
       "Control system services with systemctl",
@@ -133,7 +133,7 @@ const modules = [
     ],
   },
   {
-    title: "Chapter 16: Managing Storage with Logical Volume Manager",
+    title: "Chapter 16: Managing Storage with Logical Volume Manager (LVM)",
     topics: [
       "Create logical volumes (PVs, VGs, LVs)",
       "Extend a logical volume and grow file systems",
@@ -157,7 +157,7 @@ const modules = [
     ],
   },
   {
-    title: "Chapter 19: Managing Network Security",
+    title: "Chapter 19: Managing Network Security with firewalld",
     topics: [
       "Manage server firewalls with firewalld",
       "Add services, ports, and zones",
@@ -165,7 +165,7 @@ const modules = [
     ],
   },
   {
-    title: "Chapter 20: Accessing Network-attached Storage",
+    title: "Chapter 20: Accessing Network-attached Storage (NFS)",
     topics: [
       "Mount NFS file systems",
       "Automount storage devices with autofs",
@@ -173,12 +173,39 @@ const modules = [
     ],
   },
   {
-    title: "Chapter 21: Comprehensive Review & RHCSA Exam Prep",
+    title: "Chapter 21: Introduction to Ansible Automation",
+    topics: [
+      "Why automate: Ansible architecture and use cases",
+      "Install Ansible on RHEL 10 and configure the control node",
+      "Build inventories (static and dynamic) and configure ansible.cfg",
+      "Run ad-hoc commands across managed hosts",
+    ],
+  },
+  {
+    title: "Chapter 22: Writing Ansible Playbooks",
+    topics: [
+      "YAML syntax and playbook structure",
+      "Tasks, modules, handlers, and variables",
+      "Use facts, conditionals, loops, and templates (Jinja2)",
+      "Organize automation with roles and Ansible Vault for secrets",
+    ],
+  },
+  {
+    title: "Chapter 23: Automating RHEL Administration with Ansible",
+    topics: [
+      "Manage users, packages, services, storage and firewalld with Ansible",
+      "Deploy and configure web, database, and NFS servers via playbooks",
+      "Apply system hardening and SELinux configuration at scale",
+      "Use Ansible Galaxy collections and reusable roles",
+    ],
+  },
+  {
+    title: "Chapter 24: Job-Ready Capstone & RHCSA Exam Prep",
     topics: [
       "Comprehensive review of all RHEL 10 RHCSA objectives",
-      "Lab: Fix boot issues and maintain servers",
-      "Lab: Configure and manage file systems and storage",
-      "Lab: Configure and manage server security",
+      "Lab: Fix boot issues, recover root, and harden a server end-to-end",
+      "Capstone: Provision a multi-server environment with Ansible",
+      "Resume, GitHub portfolio, and Red Hat job interview preparation",
       "EX200 exam strategies and timed practice",
     ],
   },
@@ -191,11 +218,11 @@ const Curriculum = () => {
         <div className="text-center mb-16">
           <span className="text-primary font-mono text-sm mb-4 block">// CURRICULUM</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans">
-            RHCSA Rapid Track <span className="text-primary">(RHEL 10.1)</span>
+            Job-Ready Red Hat Track <span className="text-primary">(RHEL 10.1 + Ansible)</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            21 chapters aligned with Red Hat's official RH199 RHCSA Rapid Track curriculum for
-            Red Hat Enterprise Linux 10 — fully updated for the EX200 exam.
+            24 chapters combining Red Hat's official RH199 RHCSA Rapid Track with hands-on Ansible
+            automation — delivered in 12 weeks (3 months) and built to make you job-ready on RHEL 10.
           </p>
         </div>
 

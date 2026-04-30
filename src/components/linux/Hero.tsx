@@ -30,23 +30,23 @@ const Hero = () => {
           {/* Terminal Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 mb-8 animate-fade-in">
             <Terminal className="w-4 h-4 text-primary" />
-            <span className="text-sm font-mono text-primary">RHEL 10.1 • RHCSA Rapid Track • 16 Weeks</span>
+            <span className="text-sm font-mono text-primary">RHEL 10.1 + Ansible • Job-Ready Track • 12 Weeks</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in font-sans">
-            Become a <span className="gradient-text">Red Hat Certified</span>
+            Become a <span className="gradient-text">Job-Ready Red Hat</span>
             <br />
             Linux System Administrator
             <br />
-            <span className="text-primary">on RHEL 10.1 in 4 Months</span>
+            <span className="text-primary">on RHEL 10.1 + Ansible in 3 Months</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in max-w-2xl mx-auto" style={{ animationDelay: "0.1s" }}>
-            Official RH199 RHCSA Rapid Track curriculum on Red Hat Enterprise Linux 10 — hands-on labs,
-            real servers, and full EX200 exam prep.
-            <span className="text-primary font-semibold"> Get job-ready and certified.</span>
+            Official RH199 RHCSA Rapid Track on Red Hat Enterprise Linux 10 combined with hands-on
+            Ansible automation — real servers, full EX200 exam prep, and automation skills employers want.
+            <span className="text-primary font-semibold"> Get job-ready and certified in 12 weeks.</span>
           </p>
 
           {/* Terminal Preview */}
@@ -65,7 +65,7 @@ const Hero = () => {
                 Installing: fundamentals, networking, security, automation...
               </p>
               <p className="text-muted-foreground mt-1">
-                <span className="text-primary">✓</span> Career ready in 16 weeks
+                <span className="text-primary">✓</span> Job-ready in 12 weeks
               </p>
             </div>
           </div>
@@ -104,7 +104,7 @@ const Hero = () => {
               <p className="text-sm text-muted-foreground">Placement Rate</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-primary">16</p>
+              <p className="text-3xl md:text-4xl font-bold text-primary">12</p>
               <p className="text-sm text-muted-foreground">Weeks Duration</p>
             </div>
           </div>
