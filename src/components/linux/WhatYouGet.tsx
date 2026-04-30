@@ -63,7 +63,7 @@ const WhatYouGet = () => {
             <h3 className="text-xl font-bold mb-6 font-sans text-center">Your Training Package Includes:</h3>
             <div className="space-y-4">
               {[
-                "12 comprehensive training modules",
+                "24 comprehensive training chapters (RHCSA + Ansible)",
                 "100+ hours of hands-on practice",
                 "10+ real-world projects",
                 { text: "Private WhatsApp Group access", isWhatsApp: true },
