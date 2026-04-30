@@ -1,4 +1,4 @@
-import { Terminal, Users, HardDrive, Shield, Network, Cog } from "lucide-react";
+import { Terminal, Users, HardDrive, Shield, Network, Cog, Workflow } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const skills = [
@@ -38,6 +38,12 @@ const skills = [
     description:
       "Control services with systemctl, schedule timers, install software via DNF & Flatpak, and recover GRUB2 and root access.",
   },
+  {
+    icon: Workflow,
+    title: "Ansible Automation for RHEL",
+    description:
+      "Write playbooks and roles to automate users, packages, services, storage, firewalld and SELinux across multiple RHEL 10 servers.",
+  },
 ];
 
 const CoreSkills = () => {
@@ -50,7 +56,8 @@ const CoreSkills = () => {
             Skills You Will <span className="text-primary">Master on RHEL 10</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Six core competency areas mapped directly to the Red Hat RHCSA EX200 exam objectives for RHEL 10.
+            Seven core competency areas covering the Red Hat RHCSA EX200 exam objectives on RHEL 10
+            plus hands-on Ansible automation to make you job-ready.
           </p>
         </div>
 

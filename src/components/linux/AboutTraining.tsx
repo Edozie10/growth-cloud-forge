@@ -18,16 +18,17 @@ const AboutTraining = () => {
           <div>
             <span className="text-primary font-mono text-sm mb-4 block">// ABOUT_TRAINING</span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 font-sans">
-              A Fully Practical <span className="text-primary">16-Week</span> RHEL 10.1 Training
+              A Fully Practical <span className="text-primary">12-Week</span> Job-Ready Red Hat Training
             </h2>
             <p className="text-muted-foreground text-lg mb-6">
-              Built on Red Hat's official RH199 RHCSA Rapid Track curriculum for Red Hat Enterprise Linux 10.
-              Designed to take beginners and IT pros from zero to RHCSA-certified — no prior Linux experience required.
+              Built on Red Hat's official RH199 RHCSA Rapid Track curriculum for Red Hat Enterprise Linux 10
+              and combined with hands-on Ansible automation. Designed to take beginners and IT pros from zero
+              to RHCSA-certified and job-ready in just 3 months — no prior Linux experience required.
             </p>
             <p className="text-muted-foreground mb-8">
               You'll work directly on RHEL 10.1 systems covering users & permissions, storage & LVM,
-              SELinux, firewalld, systemd, networking with nmcli, NFS, boot recovery, and the full
-              EX200 exam objectives — through guided exercises and end-of-chapter labs.
+              SELinux, firewalld, systemd, networking with nmcli, NFS, and boot recovery — then automate
+              everything at scale with Ansible playbooks and roles, plus full EX200 exam prep.
             </p>
 
             {/* Feature Pills */}
@@ -56,8 +57,9 @@ const AboutTraining = () => {
               <p><span className="text-primary">#!/bin/bash</span></p>
               <p className="text-muted-foreground"># Your Linux Journey</p>
               <p></p>
-              <p><span className="text-yellow-500">WEEKS</span>=<span className="text-primary">"16"</span></p>
+              <p><span className="text-yellow-500">WEEKS</span>=<span className="text-primary">"12"</span></p>
               <p><span className="text-yellow-500">HOURS_PER_WEEK</span>=<span className="text-primary">"15-20"</span></p>
+              <p><span className="text-yellow-500">TRACKS</span>=<span className="text-primary">"RHCSA + Ansible"</span></p>
               <p><span className="text-yellow-500">PROJECTS</span>=<span className="text-primary">"10+"</span></p>
               <p><span className="text-yellow-500">SUPPORT</span>=<span className="text-primary">"Lifetime"</span></p>
               <p></p>
