@@ -56,11 +56,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li>
                 <a 
-                  href="mailto:training@linuxadmin.com" 
+                  href="mailto:info@complxsimple.com" 
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  training@linuxadmin.com
+                  info@complxsimple.com
                 </a>
               </li>
               <li>
