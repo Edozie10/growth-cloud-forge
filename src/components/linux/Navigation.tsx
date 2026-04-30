@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ENROLLMENT_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd2z3AIqHRgwpwNlii8U_eQpkdhPoD9l467jnFvOC_xEf6CMw/viewform?usp=header";
+const ENROLLMENT_URL = "https://buy.stripe.com/14AaEY1wx43YfodfRe8g005";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -1,7 +1,7 @@
 import { Terminal, Download, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ENROLLMENT_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd2z3AIqHRgwpwNlii8U_eQpkdhPoD9l467jnFvOC_xEf6CMw/viewform?usp=header";
+const ENROLLMENT_URL = "https://buy.stripe.com/14AaEY1wx43YfodfRe8g005";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
