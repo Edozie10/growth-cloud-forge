@@ -1,7 +1,7 @@
 import { Terminal, Download, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ENROLLMENT_URL = "https://buy.stripe.com/14AaEY1wx43YfodfRe8g005";
+const ENROLLMENT_URL = "mailto:info@complxsimple.com?subject=Enrollment%20Request%3A%20Linux%20System%20Admin%20Training&body=Hello%2C%0A%0AI%20want%20to%20enrol%20to%20Linux%20System%20Admin%20Training.%0A%0AThank%20you.";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
