@@ -114,6 +114,13 @@ const Navigation = () => {
               </button>
             ))}
             <Button
+              variant="outline"
+              className="w-full border-primary/30 text-foreground hover:bg-primary/10"
+              asChild
+            >
+              <a href={ENQUIRY_URL}>Make Enquiry</a>
+            </Button>
+            <Button
               className="w-full bg-primary hover:bg-primary-glow text-primary-foreground font-semibold"
               asChild
             >
