@@ -43,16 +43,28 @@ const FinalCTA = () => {
             </div>
           </div>
 
-          <Button 
-            size="lg" 
-            className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-12 py-8 text-xl shadow-glow hover:shadow-elevated transition-all animate-pulse-glow"
-            asChild
-          >
-            <a href={ENROLLMENT_URL} target="_blank" rel="noopener noreferrer">
-              Start Your Linux SysAdmin Journey Today
-              <ArrowRight className="ml-3 w-6 h-6" />
-            </a>
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-12 py-8 text-xl shadow-glow hover:shadow-elevated transition-all animate-pulse-glow"
+              asChild
+            >
+              <a href={ENROLLMENT_URL} target="_blank" rel="noopener noreferrer">
+                Enroll Now
+                <ArrowRight className="ml-3 w-6 h-6" />
+              </a>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-primary/30 text-foreground hover:bg-primary/10 px-8 py-8 text-lg"
+              asChild
+            >
+              <a href={ENQUIRY_URL}>
+                Make More Enquiry
+              </a>
+            </Button>
+          </div>
 
           <p className="text-sm text-muted-foreground mt-6">
             🔒 Secure payment • 💯 Satisfaction guaranteed • 🚀 Start immediately
