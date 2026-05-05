@@ -68,7 +68,14 @@ const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-3">
+            <Button
+              variant="outline"
+              className="border-primary/30 text-foreground hover:bg-primary/10"
+              asChild
+            >
+              <a href={ENQUIRY_URL}>Make Enquiry</a>
+            </Button>
             <Button
               className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold"
               asChild
