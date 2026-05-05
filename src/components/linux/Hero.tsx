@@ -1,7 +1,8 @@
-import { Terminal, Download, ArrowRight } from "lucide-react";
+import { Terminal, Download, ArrowRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ENROLLMENT_URL = "mailto:info@complxsimple.com?subject=Enrollment%20Request%3A%20Linux%20System%20Admin%20Training&body=Hello%2C%0A%0AI%20want%20to%20enrol%20to%20Linux%20System%20Admin%20Training.%0A%0AThank%20you.";
+const ENROLLMENT_URL = "https://buy.stripe.com/14AaEY1wx43YfodfRe8g005";
+const ENQUIRY_URL = "mailto:info@complxsimple.com?subject=Enquiry%3A%20Linux%20System%20Admin%20Training&body=Hello%2C%0A%0AI%20would%20like%20to%20make%20an%20enquiry%20about%20the%20Linux%20System%20Admin%20Training.%0A%0AThank%20you.";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -80,6 +81,17 @@ const Hero = () => {
               <a href={ENROLLMENT_URL} target="_blank" rel="noopener noreferrer">
                 Enroll Now
                 <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-primary/30 text-foreground hover:bg-primary/10 px-8 py-6 text-lg"
+              asChild
+            >
+              <a href={ENQUIRY_URL}>
+                <Mail className="mr-2 w-5 h-5" />
+                Make More Enquiry
               </a>
             </Button>
             <Button 
