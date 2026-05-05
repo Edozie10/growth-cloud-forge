@@ -87,6 +87,17 @@ const Hero = () => {
               size="lg" 
               variant="outline" 
               className="border-primary/30 text-foreground hover:bg-primary/10 px-8 py-6 text-lg"
+              asChild
+            >
+              <a href={ENQUIRY_URL}>
+                <Mail className="mr-2 w-5 h-5" />
+                Make More Enquiry
+              </a>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-primary/30 text-foreground hover:bg-primary/10 px-8 py-6 text-lg"
               onClick={() => scrollToSection("#curriculum")}
             >
               <Download className="mr-2 w-5 h-5" />
