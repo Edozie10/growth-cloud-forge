@@ -1,7 +1,7 @@
 import { Terminal, Download, ArrowRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const ENROLLMENT_URL = "https://buy.stripe.com/14AaEY1wx43YfodfRe8g005";
+const ENROLLMENT_URL = "https://buy.stripe.com/7sY00kcbb582b7X6g00b";
 const ENQUIRY_URL = "mailto:info@complxsimple.com?subject=Enquiry%3A%20Linux%20System%20Admin%20Training&body=Hello%2C%0A%0AI%20would%20like%20to%20make%20an%20enquiry%20about%20the%20Linux%20System%20Admin%20Training.%0A%0AThank%20you.";
 
 const Hero = () => {
