@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ENQUIRY_URL } from "@/components/linux/constants";
 
-const ENROLLMENT_URL = "https://buy.stripe.com/7sY00kcbb582b7X6gE8g00b";
-const ENQUIRY_URL = "mailto:info@complxsimple.com?subject=Enquiry%3A%20Linux%20System%20Admin%20Training&body=Hello%2C%0A%0AI%20would%20like%20to%20make%20an%20enquiry%20about%20the%20Linux%20System%20Admin%20Training.%0A%0AThank%20you.";
+const ENROLLMENT_URL = ENQUIRY_URL;
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,12 +19,13 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { href: "#why-linux", label: "Why Linux" },
+    { href: "#overview", label: "Overview" },
     { href: "#skills", label: "Skills" },
-    { href: "#curriculum", label: "Curriculum" },
-    { href: "#testimonials", label: "Reviews" },
+    { href: "#includes", label: "Includes" },
+    { href: "#fit", label: "Fit" },
     { href: "#faq", label: "FAQ" },
   ];
+
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
