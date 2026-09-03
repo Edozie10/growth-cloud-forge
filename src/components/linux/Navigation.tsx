@@ -82,7 +82,7 @@ const Navigation = () => {
               asChild
             >
               <a href={ENROLLMENT_URL} target="_blank" rel="noopener noreferrer">
-                Enroll Now
+                Request Details
               </a>
             </Button>
           </div>
@@ -126,7 +126,7 @@ const Navigation = () => {
               asChild
             >
               <a href={ENROLLMENT_URL} target="_blank" rel="noopener noreferrer">
-                Enroll Now
+                Request Details
               </a>
             </Button>
           </div>
