@@ -1,73 +1,54 @@
-import { BookOpen, Users, Briefcase, Code, Server, HeartHandshake } from "lucide-react";
+import { Check, AlertCircle } from "lucide-react";
 
-const features = [
-  { icon: BookOpen, label: "Daily Practice Sessions" },
-  { icon: Server, label: "Real Server Setup" },
-  { icon: Code, label: "Shell Scripting Basics" },
-  { icon: Users, label: "Community Support" },
-  { icon: Briefcase, label: "Career Guidance" },
-  { icon: HeartHandshake, label: "1-on-1 Mentorship" }
+const fit = [
+  "Work in technology and want to build Linux administration capability, or are preparing for a deliberate transition into technology.",
+  "Can attend the scheduled classes and make time for independent practice.",
+  "Value instruction, feedback, and consistent effort.",
+  "Have US$1,000 available for training, have employer funding approved before enrollment, or can meet the installment arrangement.",
+];
+
+const notYet = [
+  "You are still exploring career options.",
+  "You need foundational computer training first.",
+  "You are waiting for funding approval.",
 ];
 
 const AboutTraining = () => {
   return (
-    <section id="about" className="py-24 bg-card/50 relative">
+    <section id="fit" className="py-20 bg-card/30">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div>
-            <span className="text-primary font-mono text-sm mb-4 block">// ABOUT_TRAINING</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-sans">
-              A Fully Practical <span className="text-primary">12-Week</span> Job-Ready Red Hat Training
-            </h2>
-            <p className="text-muted-foreground text-lg mb-6">
-              Built on Red Hat's official RH199 RHCSA Rapid Track curriculum for Red Hat Enterprise Linux 10
-              and combined with hands-on Ansible automation. Designed to take beginners and IT pros from zero
-              to RHCSA-certified and job-ready in just 3 months — no prior Linux experience required.
-            </p>
-            <p className="text-muted-foreground mb-8">
-              You'll work directly on RHEL 10.1 systems covering users & permissions, storage & LVM,
-              SELinux, firewalld, systemd, networking with nmcli, NFS, and boot recovery — then automate
-              everything at scale with Ansible playbooks and roles, plus full EX200 exam prep.
-            </p>
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <p className="font-mono text-sm text-primary mb-3">Fit and readiness</p>
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Designed for people ready to put a <span className="gradient-text">plan into practice</span>
+          </h2>
+        </div>
 
-            {/* Feature Pills */}
-            <div className="flex flex-wrap gap-3">
-              {features.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-background hover:border-primary/50 transition-colors"
-                >
-                  <feature.icon className="w-4 h-4 text-primary" />
-                  <span className="text-sm">{feature.label}</span>
-                </div>
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="bg-card border border-border rounded-lg p-6">
+            <h3 className="font-semibold mb-4">You may be a strong fit if you:</h3>
+            <ul className="space-y-3">
+              {fit.map((f) => (
+                <li key={f} className="flex gap-3 text-sm text-muted-foreground">
+                  <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                  <span>{f}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
-
-          {/* Right - Terminal Visual */}
-          <div className="bg-card border border-border rounded-lg overflow-hidden shadow-card">
-            <div className="flex items-center gap-2 p-4 border-b border-border bg-muted/30">
-              <div className="w-3 h-3 rounded-full bg-destructive/60" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-              <div className="w-3 h-3 rounded-full bg-primary/60" />
-              <span className="text-xs text-muted-foreground ml-2 font-mono">training-overview.sh</span>
-            </div>
-            <div className="p-6 font-mono text-sm space-y-3">
-              <p><span className="text-primary">#!/bin/bash</span></p>
-              <p className="text-muted-foreground"># Your Linux Journey</p>
-              <p></p>
-              <p><span className="text-yellow-500">WEEKS</span>=<span className="text-primary">"12"</span></p>
-              <p><span className="text-yellow-500">HOURS_PER_WEEK</span>=<span className="text-primary">"15-20"</span></p>
-              <p><span className="text-yellow-500">TRACKS</span>=<span className="text-primary">"RHCSA + Ansible"</span></p>
-              <p><span className="text-yellow-500">PROJECTS</span>=<span className="text-primary">"10+"</span></p>
-              <p><span className="text-yellow-500">SUPPORT</span>=<span className="text-primary">"Lifetime"</span></p>
-              <p></p>
-              <p className="text-muted-foreground"># Start your transformation</p>
-              <p><span className="text-primary">echo</span> <span className="text-green-400">"Ready to become a Linux Pro!"</span></p>
-              <p></p>
-              <p><span className="text-primary">$</span> <span className="cursor-blink"></span></p>
-            </div>
+          <div className="bg-card border border-border rounded-lg p-6">
+            <h3 className="font-semibold mb-4">Resolve these first:</h3>
+            <ul className="space-y-3">
+              {notYet.map((n) => (
+                <li key={n} className="flex gap-3 text-sm text-muted-foreground">
+                  <AlertCircle className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
+                  <span>{n}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-sm text-muted-foreground mt-4">
+              Resolve those next steps before committing to this cohort.
+            </p>
           </div>
         </div>
       </div>

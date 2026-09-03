@@ -1,73 +1,46 @@
-import { ArrowRight, Terminal } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const ENROLLMENT_URL = "https://buy.stripe.com/7sY00kcbb582b7X6gE8g00b";
-const ENQUIRY_URL = "mailto:info@complxsimple.com?subject=Enquiry%3A%20Linux%20System%20Admin%20Training&body=Hello%2C%0A%0AI%20would%20like%20to%20make%20an%20enquiry%20about%20the%20Linux%20System%20Admin%20Training.%0A%0AThank%20you.";
+import { ENQUIRY_URL } from "@/components/linux/constants";
 
 const FinalCTA = () => {
-
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-primary/5" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="enroll" className="py-20 bg-card/30">
+      <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Terminal Animation */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 mb-8">
-            <Terminal className="w-4 h-4 text-primary" />
-            <span className="text-sm font-mono text-primary">Ready to transform your career?</span>
-          </div>
-
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-sans">
-            Start Your <span className="text-primary">Linux SysAdmin</span>
-            <br />Journey Today
+          <p className="font-mono text-sm text-primary mb-3">Investment and action</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Know the commitment <span className="gradient-text">before you enroll</span>
           </h2>
 
-          <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-            Join hundreds of successful graduates who have launched their Linux careers. 
-            Limited slots available for the next cohort.
-          </p>
-
-          {/* Terminal Command */}
-          <div className="bg-card border border-border rounded-lg p-4 mb-8 max-w-md mx-auto">
-            <div className="font-mono text-sm text-left">
-              <p className="text-muted-foreground">
-                <span className="text-primary">$</span> sudo start-career --now
-              </p>
-              <p className="text-primary mt-1">
-                ✓ Executing career transformation...
-              </p>
+          <div className="grid sm:grid-cols-3 gap-4 mb-8 text-left">
+            <div className="bg-card border border-border rounded-lg p-5">
+              <p className="text-xs font-mono text-muted-foreground uppercase">Total tuition</p>
+              <p className="text-lg font-semibold mt-1">US$1,000</p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-5">
+              <p className="text-xs font-mono text-muted-foreground uppercase">Payment schedule</p>
+              <p className="text-lg font-semibold mt-1">2 × US$500</p>
+            </div>
+            <div className="bg-card border border-border rounded-lg p-5">
+              <p className="text-xs font-mono text-muted-foreground uppercase">Lab access</p>
+              <p className="text-lg font-semibold mt-1">45 days</p>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-12 py-8 text-xl shadow-glow hover:shadow-elevated transition-all animate-pulse-glow"
-              asChild
-            >
-              <a href={ENROLLMENT_URL} target="_blank" rel="noopener noreferrer">
-                Enroll Now
-                <ArrowRight className="ml-3 w-6 h-6" />
-              </a>
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-primary/30 text-foreground hover:bg-primary/10 px-8 py-8 text-lg"
-              asChild
-            >
-              <a href={ENQUIRY_URL}>
-                Make More Enquiry
-              </a>
-            </Button>
-          </div>
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary-glow text-primary-foreground font-semibold px-8 py-6 text-lg shadow-glow"
+            asChild
+          >
+            <a href={ENQUIRY_URL}>
+              Request Enrollment Details
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+          </Button>
 
-          <p className="text-sm text-muted-foreground mt-6">
-            🔒 Secure payment • 💯 Satisfaction guaranteed • 🚀 Start immediately
+          <p className="text-sm text-muted-foreground mt-4">
+            Receive the program outline, class schedule, tuition information, and next steps for
+            joining cohort three.
           </p>
         </div>
       </div>

@@ -1,77 +1,52 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { HelpCircle } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
   {
-    question: "Which version of Red Hat Enterprise Linux does the course use?",
-    answer: "We train exclusively on Red Hat Enterprise Linux 10.1 using Red Hat's official RH199 RHCSA Rapid Track curriculum. All labs, exercises, and tooling reflect the latest RHEL 10 features."
+    q: "Do I need to work in technology already?",
+    a: "We welcome IT professionals and career changers who meet the program's starting requirements. Reach out and we'll help you decide whether this is the right starting point for you.",
   },
   {
-    question: "Does this course prepare me for the RHCSA EX200 exam?",
-    answer: "Yes. The curriculum is mapped chapter-by-chapter to the RHCSA EX200 objectives for RHEL 10, including a full comprehensive review and timed practice labs in the final chapter."
+    q: "Does completing the training make me RHCSA certified?",
+    a: "RHCSA certification is awarded after passing Red Hat's EX200 exam. This program prepares you to work toward that goal; course completion itself does not award the certification.",
   },
   {
-    question: "Do I need prior Linux or programming experience?",
-    answer: "No prior experience is required. We start from the command line basics and build progressively to advanced topics like LVM, SELinux, systemd, and boot recovery."
+    q: "Is the certification exam included?",
+    a: "Exam voucher inclusion and booking responsibility are confirmed when you request enrollment details.",
   },
   {
-    question: "What do I need to start?",
-    answer: "A computer (Windows, Mac, or Linux) with at least 8GB RAM, a stable internet connection, and 15–20 hours per week. We'll help you set up RHEL 10.1 in a virtual machine for hands-on practice."
+    q: "Can my employer pay for my training?",
+    a: "We can provide a program outline and tuition invoice for your employer's review. Employer approval and payment arrangements must be confirmed before enrollment.",
   },
   {
-    question: "Can I get a job after completing this course?",
-    answer: "Yes. RHCSA on RHEL 10 is one of the most in-demand Linux certifications. Graduates qualify for roles such as Linux System Administrator, DevOps Engineer, Cloud Engineer, and SRE."
+    q: "What if I miss a class or need to withdraw?",
+    a: "All classes are recorded and available in our LMS. Attendance, makeup, cancellation, and refund terms are shared with the enrollment details.",
   },
   {
-    question: "What if I fall behind or can't keep up?",
-    answer: "You get lifetime access to all course materials and labs, so you can learn at your own pace. Our mentors and community are always available to help."
+    q: "Will this guarantee a job or promotion?",
+    a: "Training can help you develop skills and prepare for certification. Certification, employment, promotions, and salary increases are not guaranteed.",
   },
-  {
-    question: "Is there a certificate upon completion?",
-    answer: "Yes. You'll receive a ComplxSimple completion certificate, plus full preparation to sit Red Hat's official RHCSA (EX200) exam on RHEL 10."
-  },
-  {
-    question: "Do you offer payment plans?",
-    answer: "Yes, we offer flexible installment plans. Reach out via WhatsApp to discuss a schedule that works for you."
-  }
 ];
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-24 bg-card/50 relative">
+    <section id="faq" className="py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="text-primary font-mono text-sm mb-4 block">// FAQ</span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans">
-            Frequently Asked <span className="text-primary">Questions</span>
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Got questions? We've got answers.
-          </p>
-        </div>
-
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="bg-card border border-border rounded-lg px-6 data-[state=open]:border-primary/50"
+          <div className="text-center mb-12">
+            <p className="font-mono text-sm text-primary mb-3">FAQ</p>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Questions <span className="gradient-text">answered</span>
+            </h2>
+          </div>
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((f, i) => (
+              <AccordionItem
+                key={f.q}
+                value={`item-${i}`}
+                className="bg-card border border-border rounded-lg px-5"
               >
-                <AccordionTrigger className="hover:no-underline py-4">
-                  <div className="flex items-center gap-4">
-                    <HelpCircle className="w-5 h-5 text-primary shrink-0" />
-                    <span className="text-left font-semibold font-sans">{faq.question}</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 pl-9">
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </AccordionContent>
+                <AccordionTrigger className="text-left">{f.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
