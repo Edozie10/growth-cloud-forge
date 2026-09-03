@@ -1,97 +1,51 @@
-import { CheckCircle2, Users, BookOpen, Award, Briefcase, MessageCircle } from "lucide-react";
+import { Check, CalendarClock, Clock, Server } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/15165477865";
+const includes = [
+  { title: "Instructor-led learning", text: "Scheduled instruction and opportunities to ask questions." },
+  { title: "Hands-on labs", text: "Practice applying the concepts you are learning." },
+  { title: "Milestone skill checks", text: "Feedback on progress and areas that need more attention." },
+  { title: "Readiness and setup support", text: "Establish your starting point and prepare your lab environment." },
+  { title: "Two exam-readiness workshops", text: "Bring skills together and identify what to review next." },
+  { title: "Your Linux skills record", text: "Document the lab work and troubleshooting you complete." },
+];
 
-const benefits = [
-  {
-    icon: Users,
-    title: "Lifetime Community Access",
-    description: "Join our private WhatsApp community of Linux professionals for ongoing support, networking, and opportunities.",
-    hasWhatsApp: true
-  },
-  {
-    icon: BookOpen,
-    title: "Hands-on Labs & Projects",
-    description: "Real-world projects that mirror production environments to build your portfolio."
-  },
-  {
-    icon: Award,
-    title: "Certificate of Completion",
-    description: "Industry-recognized certificate to showcase your new Linux administration skills."
-  },
-  {
-    icon: Award,
-    title: "Official RedHat RHCSA Exam Certification Prep",
-    description: "Comprehensive preparation for the Red Hat Certified System Administrator (RHCSA) exam."
-  },
-  {
-    icon: Briefcase,
-    title: "Job Interview Coaching",
-    description: "Mock interviews, resume reviews, and personalized career guidance."
-  }
+const logistics = [
+  { icon: CalendarClock, label: "Class schedule", value: "Mon, Tue & Wed — 6:00 PM EST" },
+  { icon: Clock, label: "Independent practice", value: "Plan additional practice hours each week" },
+  { icon: Server, label: "Lab access", value: "45 days official Red Hat lab access" },
 ];
 
 const WhatYouGet = () => {
   return (
-    <section id="benefits" className="py-24 relative">
+    <section id="includes" className="py-20">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left - Benefits List */}
-          <div>
-            <span className="text-primary font-mono text-sm mb-4 block">// WHAT_YOU_GET</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 font-sans">
-              Everything You Need to <span className="text-primary">Succeed</span>
-            </h2>
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <p className="font-mono text-sm text-primary mb-3">What tuition includes</p>
+          <h2 className="text-3xl md:text-4xl font-bold">
+            A clear learning plan. Dedicated practice. <span className="gradient-text">Useful feedback.</span>
+          </h2>
+        </div>
 
-            <div className="space-y-6">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <benefit.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1 font-sans">{benefit.title}</h3>
-                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
-                  </div>
-                </div>
-              ))}
+        <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+          {includes.map((i) => (
+            <div key={i.title} className="flex gap-3 bg-card border border-border rounded-lg p-5">
+              <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+              <div>
+                <h3 className="font-semibold">{i.title}</h3>
+                <p className="text-sm text-muted-foreground">{i.text}</p>
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Right - Checklist Card */}
-          <div className="bg-card border border-border rounded-lg p-8 shadow-card">
-            <h3 className="text-xl font-bold mb-6 font-sans text-center">Your Training Package Includes:</h3>
-            <div className="space-y-4">
-              {[
-                "24 comprehensive training chapters (RHCSA + Ansible)",
-                "100+ hours of hands-on practice",
-                "10+ real-world projects",
-                { text: "Private WhatsApp Group access", isWhatsApp: true },
-                "Career Mentorship Call",
-                "Official RedHat RHCSA Exam Certification Prep",
-                "Career coaching & interview prep",
-                "Certificate of completion",
-                "Lifetime access to course materials"
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                  {typeof item === 'string' ? (
-                    <span className="text-foreground">{item}</span>
-                  ) : (
-                    <a 
-                      href={WHATSAPP_URL} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-foreground hover:text-primary transition-colors flex items-center gap-2"
-                    >
-                      {item.text}
-                      <MessageCircle className="w-4 h-4 text-primary" />
-                    </a>
-                  )}
-                </div>
-              ))}
+        <div className="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto mt-6">
+          {logistics.map((l) => (
+            <div key={l.label} className="bg-card/50 border border-border rounded-lg p-5 text-center">
+              <l.icon className="w-5 h-5 text-primary mx-auto mb-2" />
+              <p className="text-xs font-mono text-muted-foreground uppercase">{l.label}</p>
+              <p className="text-sm font-medium mt-1">{l.value}</p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
