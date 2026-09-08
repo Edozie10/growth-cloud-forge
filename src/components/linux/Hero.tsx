@@ -33,9 +33,9 @@ const Hero = () => {
 
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             For technology professionals ready to deepen their skills — and career changers ready to
-            make a planned investment in their next chapter. Structured instruction, hands-on
-            practice, and feedback that shows you what you can do independently and where you need
-            more work.
+            make a planned investment in their next chapter. Build job-ready Linux administration
+            skills through structured instruction, hands-on practice, and feedback that shows you
+            what you can do independently and where you need more work.
           </p>
 
           {/* Key facts */}
