@@ -1,4 +1,4 @@
-import { Terminal, ArrowRight, Mail } from "lucide-react";
+import { Terminal, ArrowRight, Mail, Ticket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ENQUIRY_URL } from "@/components/linux/constants";
 
@@ -27,8 +27,13 @@ const Hero = () => {
             <span className="gradient-text">greater technical responsibility</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-primary font-semibold mb-4">
+          <p className="text-xl md:text-2xl text-primary font-semibold mb-5">
             Red Hat Certified System Administrator (RHCSA) Preparation
+          </p>
+
+          <p className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-primary/30 bg-primary/10 text-sm font-mono text-primary">
+            <Ticket className="w-4 h-4" />
+            Red Hat certification voucher included
           </p>
 
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -40,15 +45,18 @@ const Hero = () => {
 
           {/* Key facts */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-3xl mx-auto">
-            {[
-              { label: "Tuition", value: "US$1,000" },
+            {([
+              { label: "Tuition", value: "US$1,000", note: "incl. RHCSA certification voucher" },
               { label: "Starts", value: "Jan 2027" },
               { label: "Duration", value: "3 Months" },
               { label: "Format", value: "Live Zoom, hands-on" },
-            ].map((item) => (
+            ] as { label: string; value: string; note?: string }[]).map((item) => (
               <div key={item.label} className="bg-card border border-border rounded-lg p-4">
                 <p className="text-xs font-mono text-muted-foreground uppercase">{item.label}</p>
                 <p className="text-base font-semibold text-foreground mt-1">{item.value}</p>
+                {item.note && (
+                  <p className="text-xs text-muted-foreground mt-1">{item.note}</p>
+                )}
               </div>
             ))}
           </div>

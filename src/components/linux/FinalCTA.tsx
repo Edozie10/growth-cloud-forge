@@ -16,6 +16,7 @@ const FinalCTA = () => {
             <div className="bg-card border border-border rounded-lg p-5">
               <p className="text-xs font-mono text-muted-foreground uppercase">Total tuition</p>
               <p className="text-lg font-semibold mt-1">US$1,000</p>
+              <p className="text-xs text-muted-foreground mt-1">incl. RHCSA certification voucher</p>
             </div>
             <div className="bg-card border border-border rounded-lg p-5">
               <p className="text-xs font-mono text-muted-foreground uppercase">Payment schedule</p>
