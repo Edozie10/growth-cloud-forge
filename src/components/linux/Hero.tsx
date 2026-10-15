@@ -40,15 +40,18 @@ const Hero = () => {
 
           {/* Key facts */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-3xl mx-auto">
-            {[
-              { label: "Tuition", value: "US$1,000" },
+            {([
+              { label: "Tuition", value: "US$1,000", note: "incl. RHCSA certification voucher" },
               { label: "Starts", value: "Jan 2027" },
               { label: "Duration", value: "3 Months" },
               { label: "Format", value: "Live Zoom, hands-on" },
-            ].map((item) => (
+            ] as { label: string; value: string; note?: string }[]).map((item) => (
               <div key={item.label} className="bg-card border border-border rounded-lg p-4">
                 <p className="text-xs font-mono text-muted-foreground uppercase">{item.label}</p>
                 <p className="text-base font-semibold text-foreground mt-1">{item.value}</p>
+                {item.note && (
+                  <p className="text-xs text-muted-foreground mt-1">{item.note}</p>
+                )}
               </div>
             ))}
           </div>

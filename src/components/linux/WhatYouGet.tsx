@@ -7,6 +7,7 @@ const includes = [
   { title: "Readiness and setup support", text: "Establish your starting point and prepare your lab environment." },
   { title: "Two exam-readiness workshops", text: "Bring skills together and identify what to review next." },
   { title: "Your Linux skills record", text: "Document the lab work and troubleshooting you complete." },
+  { title: "Red Hat certification voucher", text: "Included in tuition." },
 ];
 
 const logistics = [
