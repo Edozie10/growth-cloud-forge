@@ -3,5 +3,3 @@ export const ENQUIRY_URL =
 
 export const CONTACT_EMAIL = "info@complxsimple.com";
 
-export const PROGRAM_VIDEO_URL =
-  "https://drive.google.com/file/d/1xA-7HUyth9WSnM5VR3_WlJaxyhaJUBVK/view?usp=drive_link";
