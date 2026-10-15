@@ -38,7 +38,7 @@ const Overview = () => {
                 className="group absolute inset-0 block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 <img
-                  src={thumbnail.url}
+                  src={new URL(thumbnail.url, "https://growth-cloud-forge.lovable.app").href}
                   alt="Red Hat Linux Program Overview — Cohort 3"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
