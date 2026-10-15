@@ -42,7 +42,7 @@ const Hero = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-3xl mx-auto">
             {[
               { label: "Tuition", value: "US$1,000" },
-              { label: "Starts", value: "Nov 20, 2026" },
+              { label: "Starts", value: "Jan 2027" },
               { label: "Duration", value: "3 Months" },
               { label: "Format", value: "Live Zoom, hands-on" },
             ].map((item) => (
