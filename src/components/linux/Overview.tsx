@@ -27,16 +27,12 @@ const Overview = () => {
             <img
               src={thumbnail.url}
               alt="Red Hat Linux Program Overview — Cohort 3"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
             />
-            <span className="absolute inset-0 bg-black/25 transition-colors duration-300 group-hover:bg-black/10" />
-            <span className="absolute inset-0 flex items-center justify-center">
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/90 shadow-glow transition-transform duration-300 group-hover:scale-110">
-                <Play className="h-7 w-7 translate-x-0.5 text-primary-foreground" fill="currentColor" />
-              </span>
-            </span>
-            <span className="absolute bottom-3 left-4 font-mono text-xs uppercase tracking-wide text-white/80">
-              Program overview
+            <span className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20" />
+            <span className="absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-full bg-black/70 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+              <Play className="h-4 w-4 translate-x-0.5" fill="currentColor" />
+              Watch the program overview
             </span>
           </a>
         </div>
