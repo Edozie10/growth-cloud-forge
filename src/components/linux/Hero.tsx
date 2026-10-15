@@ -1,4 +1,4 @@
-import { Terminal, ArrowRight, Mail } from "lucide-react";
+import { Terminal, ArrowRight, Mail, Ticket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ENQUIRY_URL } from "@/components/linux/constants";
 
@@ -27,8 +27,13 @@ const Hero = () => {
             <span className="gradient-text">greater technical responsibility</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-primary font-semibold mb-4">
+          <p className="text-xl md:text-2xl text-primary font-semibold mb-5">
             Red Hat Certified System Administrator (RHCSA) Preparation
+          </p>
+
+          <p className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-primary/30 bg-primary/10 text-sm font-mono text-primary">
+            <Ticket className="w-4 h-4" />
+            Red Hat certification voucher included
           </p>
 
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
