@@ -16,8 +16,7 @@ const Overview = () => {
             Make your next training investment a <span className="gradient-text">deliberate one</span>
           </h2>
           <p className="text-muted-foreground mb-10">
-            Watch the video to meet your instructor, explore the program, and understand the skills,
-            schedule, and financial commitment before you decide.
+            Watch the video and explore the program.
           </p>
         </div>
 
